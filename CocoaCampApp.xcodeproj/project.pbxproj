@@ -16,8 +16,8 @@
 		9019C7121707394A00AA2B41 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9019C7111707394A00AA2B41 /* Default.png */; };
 		9019C7141707394A00AA2B41 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9019C7131707394A00AA2B41 /* Default@2x.png */; };
 		9019C7161707394A00AA2B41 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9019C7151707394A00AA2B41 /* Default-568h@2x.png */; };
-		9019C7191707394A00AA2B41 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019C7181707394A00AA2B41 /* MSViewController.m */; };
-		9019C71C1707394A00AA2B41 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9019C71A1707394A00AA2B41 /* MSViewController.xib */; };
+		9019C7191707394A00AA2B41 /* MSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019C7181707394A00AA2B41 /* MSRootViewController.m */; };
+		9019C71C1707394A00AA2B41 /* MSRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9019C71A1707394A00AA2B41 /* MSRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +34,9 @@
 		9019C7111707394A00AA2B41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9019C7131707394A00AA2B41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9019C7151707394A00AA2B41 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		9019C7171707394A00AA2B41 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
-		9019C7181707394A00AA2B41 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
-		9019C71B1707394A00AA2B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSViewController.xib; sourceTree = "<group>"; };
+		9019C7171707394A00AA2B41 /* MSRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSRootViewController.h; sourceTree = "<group>"; };
+		9019C7181707394A00AA2B41 /* MSRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSRootViewController.m; sourceTree = "<group>"; };
+		9019C71B1707394A00AA2B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSRootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +85,9 @@
 			children = (
 				9019C70E1707394A00AA2B41 /* MSAppDelegate.h */,
 				9019C70F1707394A00AA2B41 /* MSAppDelegate.m */,
-				9019C7171707394A00AA2B41 /* MSViewController.h */,
-				9019C7181707394A00AA2B41 /* MSViewController.m */,
-				9019C71A1707394A00AA2B41 /* MSViewController.xib */,
+				9019C7171707394A00AA2B41 /* MSRootViewController.h */,
+				9019C7181707394A00AA2B41 /* MSRootViewController.m */,
+				9019C71A1707394A00AA2B41 /* MSRootViewController.xib */,
 				9019C7061707394A00AA2B41 /* Supporting Files */,
 			);
 			path = CocoaCampApp;
@@ -163,7 +163,7 @@
 				9019C7121707394A00AA2B41 /* Default.png in Resources */,
 				9019C7141707394A00AA2B41 /* Default@2x.png in Resources */,
 				9019C7161707394A00AA2B41 /* Default-568h@2x.png in Resources */,
-				9019C71C1707394A00AA2B41 /* MSViewController.xib in Resources */,
+				9019C71C1707394A00AA2B41 /* MSRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +176,7 @@
 			files = (
 				9019C70C1707394A00AA2B41 /* main.m in Sources */,
 				9019C7101707394A00AA2B41 /* MSAppDelegate.m in Sources */,
-				9019C7191707394A00AA2B41 /* MSViewController.m in Sources */,
+				9019C7191707394A00AA2B41 /* MSRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +191,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		9019C71A1707394A00AA2B41 /* MSViewController.xib */ = {
+		9019C71A1707394A00AA2B41 /* MSRootViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9019C71B1707394A00AA2B41 /* en */,
 			);
-			name = MSViewController.xib;
+			name = MSRootViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
