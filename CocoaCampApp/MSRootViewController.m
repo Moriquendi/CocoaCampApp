@@ -8,15 +8,21 @@
 
 #import "MSRootViewController.h"
 #import "MSCurrencyInfoCollectionViewCell.h"
+#import "MSConvertedCurrencyTableViewCell.h"
 
 #define THUMB_SIZE  44
 NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
+NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
 @interface MSRootViewController ()
+<UITableViewDataSource,
+UITableViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
-@property (weak, nonatomic) IBOutlet UILabel *convertedMoneyLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *currenciesCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
 
 
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
@@ -43,6 +49,10 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     keyboardToolbar.items = @[doneButton];
 
     self.amountTextField.inputAccessoryView = keyboardToolbar;
+
+    // Setting up table view
+    [self.convertedCurrenciesTableView registerClass:[MSConvertedCurrencyTableViewCell class]
+                              forCellReuseIdentifier:kConvertedCurrencyCellIdentifier];
     
     // Setting up collection view
     [self.currenciesCollectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
@@ -59,8 +69,36 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 - (void)convert
 {
-    NSNumber *amount = @([self.amountTextField.text intValue]);
-    self.convertedMoneyLabel.text = [NSNumberFormatter localizedStringFromNumber:amount numberStyle:NSNumberFormatterCurrencyStyle];
+    [self.convertedCurrenciesTableView reloadRowsAtIndexPaths:[self.convertedCurrenciesTableView indexPathsForVisibleRows]
+                                             withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - <UICollectionViewDataSource>
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kConvertedCurrencyCellIdentifier];
+
+    if ([cell isKindOfClass:[MSConvertedCurrencyTableViewCell class]]) {
+        MSConvertedCurrencyTableViewCell *currencyCell = (MSConvertedCurrencyTableViewCell *)cell;
+        NSNumber *amount = @([self.amountTextField.text intValue]);
+        currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
+                                                               numberStyle:NSNumberFormatterCurrencyStyle];
+    }
+
+    return cell;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90;
 }
 
 #pragma mark - <UICollectionViewDataSource>

@@ -1,5 +1,5 @@
 //
-//  MSRootViewController.h
+//  MSConvertedCurrencyTableViewCell.h
 //  CocoaCampApp
 //
 //  Created by Michał Śmiałko on 30.03.2013.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSRootViewController : UIViewController
+@interface MSConvertedCurrencyTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) NSString *amount;
 
 @end

@@ -20,6 +20,8 @@
 		9019C71C1707394A00AA2B41 /* MSRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9019C71A1707394A00AA2B41 /* MSRootViewController.xib */; };
 		9030414D17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */; };
 		9030414F1707593F003F33AE /* MSCurrencyInfoCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */; };
+		908AF17417079C3300087625 /* MSConvertedCurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */; };
+		908AF17617079C5D00087625 /* MSConvertedCurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		9030414B17075391003F33AE /* MSCurrencyInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyInfoCollectionViewCell.h; path = Views/MSCurrencyInfoCollectionViewCell.h; sourceTree = "<group>"; };
 		9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyInfoCollectionViewCell.m; path = Views/MSCurrencyInfoCollectionViewCell.m; sourceTree = "<group>"; };
 		9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyInfoCollectionView.xib; path = Views/MSCurrencyInfoCollectionView.xib; sourceTree = "<group>"; };
+		908AF17217079C3300087625 /* MSConvertedCurrencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSConvertedCurrencyTableViewCell.h; path = Views/MSConvertedCurrencyTableViewCell.h; sourceTree = "<group>"; };
+		908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSConvertedCurrencyTableViewCell.m; path = Views/MSConvertedCurrencyTableViewCell.m; sourceTree = "<group>"; };
+		908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSConvertedCurrencyView.xib; path = Views/MSConvertedCurrencyView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				9030414B17075391003F33AE /* MSCurrencyInfoCollectionViewCell.h */,
 				9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */,
 				9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */,
+				908AF17217079C3300087625 /* MSConvertedCurrencyTableViewCell.h */,
+				908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */,
+				908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 				9019C7161707394A00AA2B41 /* Default-568h@2x.png in Resources */,
 				9019C71C1707394A00AA2B41 /* MSRootViewController.xib in Resources */,
 				9030414F1707593F003F33AE /* MSCurrencyInfoCollectionView.xib in Resources */,
+				908AF17617079C5D00087625 /* MSConvertedCurrencyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +204,7 @@
 				9019C7101707394A00AA2B41 /* MSAppDelegate.m in Sources */,
 				9019C7191707394A00AA2B41 /* MSRootViewController.m in Sources */,
 				9030414D17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m in Sources */,
+				908AF17417079C3300087625 /* MSConvertedCurrencyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
