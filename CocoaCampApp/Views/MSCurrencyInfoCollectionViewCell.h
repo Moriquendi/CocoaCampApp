@@ -1,5 +1,5 @@
 //
-//  MSRootViewController.h
+//  MSCurrencyInfoCollectionViewCell.h
 //  CocoaCampApp
 //
 //  Created by Michał Śmiałko on 30.03.2013.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSRootViewController : UIViewController
-<UICollectionViewDataSource,
-UICollectionViewDelegate>
+@interface MSCurrencyInfoCollectionViewCell : UICollectionViewCell
 
 @end
