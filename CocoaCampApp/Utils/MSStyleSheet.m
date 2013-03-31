@@ -11,7 +11,8 @@
 @interface MSStyleSheet ()
 @property (nonatomic, readwrite, strong) UIColor *mainBackgroundColor;
 @property (nonatomic, readwrite, strong) UIColor *separatorColor;
-@property (nonatomic, readwrite, strong) UIColor *defaultTextColor;
+@property (nonatomic, readwrite, strong) UIColor *darkTextColor;
+@property (nonatomic, readwrite, strong) UIColor *lightTextColor;
 @end
 
 @implementation MSStyleSheet
@@ -39,7 +40,8 @@
                                                     blue:237.f/255.f
                                                    alpha:1.0];
         self.separatorColor = [UIColor colorWithWhite:100.f/255.f alpha:0.6];
-        self.defaultTextColor = [UIColor colorWithWhite:51.f/255.f alpha:1.0];
+        self.darkTextColor = [UIColor colorWithWhite:51.f/255.f alpha:1.0];
+        self.lightTextColor = [UIColor colorWithWhite:230.f/255.f alpha:1.0];
         
         [self appleAppearanceProxies];
     }

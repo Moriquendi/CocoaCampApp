@@ -34,6 +34,8 @@
                                                             owner:self
                                                           options:nil][0];
         [self.contentView addSubview:contentView];
+
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
 }

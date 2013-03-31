@@ -12,7 +12,8 @@
 
 @property (nonatomic, readonly, strong) UIColor *mainBackgroundColor;
 @property (nonatomic, readonly, strong) UIColor *separatorColor;
-@property (nonatomic, readonly, strong) UIColor *defaultTextColor;
+@property (nonatomic, readonly, strong) UIColor *darkTextColor;
+@property (nonatomic, readonly, strong) UIColor *lightTextColor;
 
 + (instancetype)sharedInstance;
 

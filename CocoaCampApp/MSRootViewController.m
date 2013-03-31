@@ -51,7 +51,7 @@ UICollectionViewDelegate>
     self.view.backgroundColor = styleSheet.mainBackgroundColor;
     self.title = @"Converter";
     self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
-    self.amountTextField.textColor = styleSheet.defaultTextColor;
+    self.amountTextField.textColor = styleSheet.darkTextColor;
     // TODO: Put in stylesheet
     self.currenciesCollectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:1.0];
     self.currenciesCollectionView.layer.borderColor = [styleSheet.separatorColor CGColor];

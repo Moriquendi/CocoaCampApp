@@ -7,9 +7,12 @@
 //
 
 #import "MSCurrencyInfoCollectionViewCell.h"
+#import "MSStyleSheet.h"
 
 @interface MSCurrencyInfoCollectionViewCell ()
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
 
 @end
 
@@ -34,11 +37,17 @@
 {
     [super setSelected:selected];
 
+    MSStyleSheet *styleSheet = [MSStyleSheet sharedInstance];
+
     if (selected) {
         self.backgroundView.backgroundColor = [UIColor colorWithRed:241.f/255.f green:71.f/255.f blue:66.f/255.f alpha:1.0];
+        self.currencySymbolLabel.textColor = styleSheet.lightTextColor;
+        self.currencyNameLabel.textColor = styleSheet.lightTextColor;
     }
     else {
         self.backgroundView.backgroundColor = [UIColor colorWithRed:152.f/255.f green:210.f/255.f blue:240.f/255.f alpha:1.0];
+        self.currencySymbolLabel.textColor = styleSheet.darkTextColor;
+        self.currencyNameLabel.textColor = styleSheet.darkTextColor;
     }
 }
 
