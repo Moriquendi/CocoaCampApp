@@ -26,6 +26,7 @@
 		908AF17B170834E600087625 /* MSCurrencySummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF179170834E600087625 /* MSCurrencySummaryViewController.xib */; };
 		908AF17F1708386E00087625 /* usa-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17D1708386E00087625 /* usa-flag.png */; };
 		908AF1801708386E00087625 /* usa-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17E1708386E00087625 /* usa-flag@2x.png */; };
+		908AF1851708400200087625 /* MSDataCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1841708400200087625 /* MSDataCurrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		908AF179170834E600087625 /* MSCurrencySummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencySummaryViewController.xib; path = Controllers/MSCurrencySummaryViewController.xib; sourceTree = "<group>"; };
 		908AF17D1708386E00087625 /* usa-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "usa-flag.png"; path = "Images/Flags/usa-flag.png"; sourceTree = "<group>"; };
 		908AF17E1708386E00087625 /* usa-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "usa-flag@2x.png"; path = "Images/Flags/usa-flag@2x.png"; sourceTree = "<group>"; };
+		908AF1831708400200087625 /* MSDataCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDataCurrency.h; path = Model/MSDataCurrency.h; sourceTree = "<group>"; };
+		908AF1841708400200087625 /* MSDataCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDataCurrency.m; path = Model/MSDataCurrency.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +105,10 @@
 		9019C7051707394A00AA2B41 /* CocoaCampApp */ = {
 			isa = PBXGroup;
 			children = (
-				908AF17C170834E900087625 /* Controllers */,
 				9019C70E1707394A00AA2B41 /* MSAppDelegate.h */,
 				9019C70F1707394A00AA2B41 /* MSAppDelegate.m */,
+				908AF1861708400900087625 /* Model */,
+				908AF17C170834E900087625 /* Controllers */,
 				9030414A170752F4003F33AE /* Views */,
 				9019C7061707394A00AA2B41 /* Supporting Files */,
 			);
@@ -167,6 +171,15 @@
 				908AF17E1708386E00087625 /* usa-flag@2x.png */,
 			);
 			name = Flags;
+			sourceTree = "<group>";
+		};
+		908AF1861708400900087625 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				908AF1831708400200087625 /* MSDataCurrency.h */,
+				908AF1841708400200087625 /* MSDataCurrency.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +260,7 @@
 				9030414D17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m in Sources */,
 				908AF17417079C3300087625 /* MSConvertedCurrencyTableViewCell.m in Sources */,
 				908AF17A170834E600087625 /* MSCurrencySummaryViewController.m in Sources */,
+				908AF1851708400200087625 /* MSDataCurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
