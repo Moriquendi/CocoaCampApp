@@ -9,6 +9,7 @@
 #import "MSRootViewController.h"
 #import "MSCurrencyInfoCollectionViewCell.h"
 #import "MSConvertedCurrencyTableViewCell.h"
+#import "MSCurrencySummaryViewController.h"
 
 #define THUMB_SIZE  44
 NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
@@ -99,6 +100,12 @@ UICollectionViewDelegate>
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MSCurrencySummaryViewController *currencySummaryVC = [[MSCurrencySummaryViewController alloc] init];
+    [self.navigationController pushViewController:currencySummaryVC animated:YES];
 }
 
 #pragma mark - <UICollectionViewDataSource>
