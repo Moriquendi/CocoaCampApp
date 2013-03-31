@@ -21,7 +21,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Self
+    self.title = @"Summary";
+
+    // Flag image
     self.flagImageView.image = [UIImage imageNamed:@"usa-flag"];
+
+    // Wikipedia content
     NSURL *wikipediaURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Dollar"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:wikipediaURL];
     [self.currencyDetailsWebView loadRequest:request];

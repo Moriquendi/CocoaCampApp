@@ -29,6 +29,8 @@
     [self.layer addSublayer:self.gradientLayer];
 }
 
+#pragma mark - UIView
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

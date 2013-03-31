@@ -11,6 +11,9 @@
 #import "MSConvertedCurrencyTableViewCell.h"
 #import "MSCurrencySummaryViewController.h"
 #import "MSDataCurrency.h"
+#import "MSStyleSheet.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 #define THUMB_SIZE              44
 #define TABLE_VIEW_CELL_HEIGHT  90
@@ -26,6 +29,7 @@ UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UICollectionView *currenciesCollectionView;
+@property (weak, nonatomic) IBOutlet UIView *slidingPickerView;
 @property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
 
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
@@ -41,6 +45,18 @@ UICollectionViewDelegate>
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Appearance
+    MSStyleSheet *styleSheet = [MSStyleSheet sharedInstance];
+    self.view.backgroundColor = styleSheet.mainBackgroundColor;
+    self.title = @"Converter";
+    self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
+    self.amountTextField.textColor = styleSheet.defaultTextColor;
+    // TODO: Put in stylesheet
+    self.currenciesCollectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:1.0];
+    self.currenciesCollectionView.layer.borderColor = [styleSheet.separatorColor CGColor];
+    self.currenciesCollectionView.layer.borderWidth = 2.0;
+    self.currenciesCollectionView.layer.cornerRadius = 5.0;
 
     // Setting up Currency formatter
     self.currencyFormatter = [[NSNumberFormatter alloc] init];
@@ -65,6 +81,7 @@ UICollectionViewDelegate>
                       forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
     self.currenciesCollectionView.allowsMultipleSelection = YES;
 
+    // Selected currencies indexes
     self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
 
     // Test data
@@ -89,6 +106,25 @@ UICollectionViewDelegate>
     [self.convertedCurrenciesTableView reloadRowsAtIndexPaths:[self.convertedCurrenciesTableView indexPathsForVisibleRows]
                                              withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
+- (IBAction)swipeUpGesture:(id)sender
+{
+    // Show picker view
+    [UIView animateWithDuration:0.3 animations:^{
+        self.slidingPickerView.frame = CGRectOffset(self.slidingPickerView.frame, 0, -self.currenciesCollectionView.frame.size.height);
+    }];
+
+}
+
+
+- (IBAction)swipeDownGesture:(id)sender
+{
+    // Hide picker view
+    [UIView animateWithDuration:0.3 animations:^{
+        self.slidingPickerView.frame = CGRectOffset(self.slidingPickerView.frame, 0, self.currenciesCollectionView.frame.size.height);
+    }];
+}
+
 
 #pragma mark - <UICollectionViewDataSource>
 
@@ -138,7 +174,11 @@ UICollectionViewDelegate>
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCurrencyInfoCellIdentifier
                                                                            forIndexPath:indexPath];
-    
+
+    // Configure appearance
+    cell.layer.cornerRadius = 5.0;
+    cell.layer.masksToBounds = YES;
+
     return cell;
 }
 
