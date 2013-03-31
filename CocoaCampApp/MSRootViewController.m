@@ -103,7 +103,10 @@ UICollectionViewDelegate>
 
     if ([cell isKindOfClass:[MSConvertedCurrencyTableViewCell class]]) {
         MSConvertedCurrencyTableViewCell *currencyCell = (MSConvertedCurrencyTableViewCell *)cell;
-        NSNumber *amount = @([self.amountTextField.text intValue]);
+        NSUInteger currencyIndex = [self.selectedCurrenciesIndexes[indexPath.row] intValue];
+        MSDataCurrency *currencyData = [self.currencies objectAtIndex:currencyIndex];
+        NSNumber *amount = @([self.amountTextField.text intValue] * currencyData.toDollarRatio);
+
         currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
                                                                numberStyle:NSNumberFormatterCurrencyStyle];
     }
