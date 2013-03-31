@@ -8,7 +8,14 @@
 
 #import "MSCurrencyInfoCollectionViewCell.h"
 
+@interface MSCurrencyInfoCollectionViewCell ()
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+
+@end
+
 @implementation MSCurrencyInfoCollectionViewCell
+
+#pragma mark - UIView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -19,6 +26,20 @@
         [self.contentView addSubview:contentView];
     }
     return self;
+}
+
+#pragma mark - UICollectionViewCell
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+
+    if (selected) {
+        self.backgroundView.backgroundColor = [UIColor redColor];
+    }
+    else {
+        self.backgroundView.backgroundColor = [UIColor blueColor];
+    }
 }
 
 @end

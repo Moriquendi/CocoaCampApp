@@ -10,8 +10,11 @@
 #import "MSCurrencyInfoCollectionViewCell.h"
 #import "MSConvertedCurrencyTableViewCell.h"
 #import "MSCurrencySummaryViewController.h"
+#import "MSDataCurrency.h"
 
-#define THUMB_SIZE  44
+#define THUMB_SIZE              44
+#define TABLE_VIEW_CELL_HEIGHT  90
+
 NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
@@ -25,8 +28,10 @@ UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *currenciesCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
 
-
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
+@property (nonatomic, strong) NSArray *currencies; // of MSDataCurrency
+@property (nonatomic, strong) NSMutableArray *selectedCurrenciesIndexes;
+
 @end
 
 @implementation MSRootViewController
@@ -58,6 +63,17 @@ UICollectionViewDelegate>
     // Setting up collection view
     [self.currenciesCollectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
                       forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
+    self.currenciesCollectionView.allowsMultipleSelection = YES;
+
+    self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
+
+    // Test data
+    NSMutableArray *currencies = [[NSMutableArray alloc] initWithCapacity:4];
+    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:1.4]];
+    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:2.0]];
+    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:2.7]];
+    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:5.0]];
+    self.currencies = currencies;
 }
 
 #pragma mark - MSRootViewController
@@ -78,7 +94,7 @@ UICollectionViewDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.selectedCurrenciesIndexes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +115,7 @@ UICollectionViewDelegate>
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return TABLE_VIEW_CELL_HEIGHT;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +128,7 @@ UICollectionViewDelegate>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return [self.currencies count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -123,5 +139,22 @@ UICollectionViewDelegate>
     return cell;
 }
 
+#pragma mark - <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
+
+    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
+
+    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+}
 
 @end
