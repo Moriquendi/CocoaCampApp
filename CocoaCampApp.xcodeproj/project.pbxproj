@@ -27,6 +27,8 @@
 		908AF17F1708386E00087625 /* usa-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17D1708386E00087625 /* usa-flag.png */; };
 		908AF1801708386E00087625 /* usa-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17E1708386E00087625 /* usa-flag@2x.png */; };
 		908AF1851708400200087625 /* MSDataCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1841708400200087625 /* MSDataCurrency.m */; };
+		908AF1891708537F00087625 /* MSFlagImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1881708537F00087625 /* MSFlagImageView.m */; };
+		908AF18B1708546000087625 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908AF18A1708546000087625 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,9 @@
 		908AF17E1708386E00087625 /* usa-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "usa-flag@2x.png"; path = "Images/Flags/usa-flag@2x.png"; sourceTree = "<group>"; };
 		908AF1831708400200087625 /* MSDataCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDataCurrency.h; path = Model/MSDataCurrency.h; sourceTree = "<group>"; };
 		908AF1841708400200087625 /* MSDataCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDataCurrency.m; path = Model/MSDataCurrency.m; sourceTree = "<group>"; };
+		908AF1871708537F00087625 /* MSFlagImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSFlagImageView.h; path = Views/MSFlagImageView.h; sourceTree = "<group>"; };
+		908AF1881708537F00087625 /* MSFlagImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSFlagImageView.m; path = Views/MSFlagImageView.m; sourceTree = "<group>"; };
+		908AF18A1708546000087625 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908AF18B1708546000087625 /* QuartzCore.framework in Frameworks */,
 				9019C7001707394A00AA2B41 /* UIKit.framework in Frameworks */,
 				9019C7021707394A00AA2B41 /* Foundation.framework in Frameworks */,
 				9019C7041707394A00AA2B41 /* CoreGraphics.framework in Frameworks */,
@@ -95,6 +101,7 @@
 		9019C6FE1707394A00AA2B41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				908AF18A1708546000087625 /* QuartzCore.framework */,
 				9019C6FF1707394A00AA2B41 /* UIKit.framework */,
 				9019C7011707394A00AA2B41 /* Foundation.framework */,
 				9019C7031707394A00AA2B41 /* CoreGraphics.framework */,
@@ -139,6 +146,8 @@
 				908AF17217079C3300087625 /* MSConvertedCurrencyTableViewCell.h */,
 				908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */,
 				908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */,
+				908AF1871708537F00087625 /* MSFlagImageView.h */,
+				908AF1881708537F00087625 /* MSFlagImageView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 				908AF17417079C3300087625 /* MSConvertedCurrencyTableViewCell.m in Sources */,
 				908AF17A170834E600087625 /* MSCurrencySummaryViewController.m in Sources */,
 				908AF1851708400200087625 /* MSDataCurrency.m in Sources */,
+				908AF1891708537F00087625 /* MSFlagImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
