@@ -12,9 +12,12 @@
 
 @property (nonatomic, readonly, strong) UIColor *mainBackgroundColor;
 @property (nonatomic, readonly, strong) UIColor *separatorColor;
+@property (nonatomic, readonly, strong) UIColor *emphasizedTextColor;
 @property (nonatomic, readonly, strong) UIColor *darkTextColor;
 @property (nonatomic, readonly, strong) UIColor *lightTextColor;
 
 + (instancetype)sharedInstance;
+
+- (UIColor *)randomColorAtIndex:(NSUInteger)index;
 
 @end

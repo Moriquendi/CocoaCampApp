@@ -53,7 +53,7 @@ UICollectionViewDelegate>
     self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
     self.amountTextField.textColor = styleSheet.darkTextColor;
     // TODO: Put in stylesheet
-    self.currenciesCollectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:1.0];
+    self.currenciesCollectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:0.3];
     self.currenciesCollectionView.layer.borderColor = [styleSheet.separatorColor CGColor];
     self.currenciesCollectionView.layer.borderWidth = 2.0;
     self.currenciesCollectionView.layer.cornerRadius = 5.0;
@@ -145,17 +145,13 @@ UICollectionViewDelegate>
 
         currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
                                                                numberStyle:NSNumberFormatterCurrencyStyle];
+        currencyCell.currencySymbolBgColor = [[MSStyleSheet sharedInstance] randomColorAtIndex:indexPath.row];
     }
 
     return cell;
 }
 
 #pragma mark - <UITableViewDelegate>
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return TABLE_VIEW_CELL_HEIGHT;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

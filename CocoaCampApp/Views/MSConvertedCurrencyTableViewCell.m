@@ -7,16 +7,27 @@
 //
 
 #import "MSConvertedCurrencyTableViewCell.h"
+#import "MSStyleSheet.h"
 
 @interface MSConvertedCurrencyTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
+@property (weak, nonatomic) IBOutlet UIView *currencySymbolBgView;
 
 @end
 
 @implementation MSConvertedCurrencyTableViewCell
 
 #pragma mark - Getters/Setters
+
+- (void)setCurrencySymbolBgColor:(UIColor *)currencySymbolBgColor
+{
+    _currencySymbolBgColor= currencySymbolBgColor;
+    self.currencySymbolBgView.backgroundColor = currencySymbolBgColor;
+    self.currencyNameLabel.textColor = currencySymbolBgColor;
+}
 
 - (void)setAmount:(NSString *)amount
 {
@@ -30,12 +41,17 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        // Content view
         UIView *contentView = [[NSBundle mainBundle] loadNibNamed:@"MSConvertedCurrencyView"
                                                             owner:self
                                                           options:nil][0];
         [self.contentView addSubview:contentView];
 
+        // Accessory
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        // Appearance
+        self.amountLabel.textColor = [[MSStyleSheet sharedInstance] emphasizedTextColor];
     }
     return self;
 }
