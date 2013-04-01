@@ -10,4 +10,7 @@
 
 @interface MSCurrencySummaryViewController : UIViewController
 
+@property (nonatomic, strong) NSArray *currencyImages;
+@property (nonatomic, strong) NSString *currencyDetails;
+
 @end

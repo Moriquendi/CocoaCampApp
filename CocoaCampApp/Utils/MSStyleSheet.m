@@ -85,7 +85,7 @@
     UIColor *randomColor = [UIColor colorWithHue:hue / 360.f
                                       saturation:saturation / 100.f
                                       brightness:brightness / 100.f
-                                           alpha:1.0];
+                                           alpha:0.7];
     return randomColor;
 }
 

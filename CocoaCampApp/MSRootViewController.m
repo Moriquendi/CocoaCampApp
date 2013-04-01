@@ -7,29 +7,23 @@
 //
 
 #import "MSRootViewController.h"
-#import "MSCurrencyInfoCollectionViewCell.h"
 #import "MSConvertedCurrencyTableViewCell.h"
 #import "MSCurrencySummaryViewController.h"
 #import "MSDataCurrency.h"
 #import "MSStyleSheet.h"
-
-#import <QuartzCore/QuartzCore.h>
+#import "MSCurrencyPickerViewController.h"
 
 #define THUMB_SIZE              44
 #define TABLE_VIEW_CELL_HEIGHT  90
 
-NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
 @interface MSRootViewController ()
 <UITableViewDataSource,
 UITableViewDelegate,
-UICollectionViewDataSource,
-UICollectionViewDelegate>
+MSPickerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
-@property (weak, nonatomic) IBOutlet UICollectionView *currenciesCollectionView;
-@property (weak, nonatomic) IBOutlet UIView *slidingPickerView;
 @property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
 
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
@@ -52,11 +46,6 @@ UICollectionViewDelegate>
     self.title = @"Converter";
     self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
     self.amountTextField.textColor = styleSheet.darkTextColor;
-    // TODO: Put in stylesheet
-    self.currenciesCollectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:0.3];
-    self.currenciesCollectionView.layer.borderColor = [styleSheet.separatorColor CGColor];
-    self.currenciesCollectionView.layer.borderWidth = 2.0;
-    self.currenciesCollectionView.layer.cornerRadius = 5.0;
 
     // Setting up Currency formatter
     self.currencyFormatter = [[NSNumberFormatter alloc] init];
@@ -75,11 +64,6 @@ UICollectionViewDelegate>
     // Setting up table view
     [self.convertedCurrenciesTableView registerClass:[MSConvertedCurrencyTableViewCell class]
                               forCellReuseIdentifier:kConvertedCurrencyCellIdentifier];
-    
-    // Setting up collection view
-    [self.currenciesCollectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
-                      forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
-    self.currenciesCollectionView.allowsMultipleSelection = YES;
 
     // Selected currencies indexes
     self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
@@ -107,24 +91,16 @@ UICollectionViewDelegate>
                                              withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (IBAction)swipeUpGesture:(id)sender
+- (IBAction)showCurrenciesPicker:(id)sender
 {
-    // Show picker view
-    [UIView animateWithDuration:0.3 animations:^{
-        self.slidingPickerView.frame = CGRectOffset(self.slidingPickerView.frame, 0, -self.currenciesCollectionView.frame.size.height);
-    }];
-
+    MSCurrencyPickerViewController *currencyPickerVC = [[MSCurrencyPickerViewController alloc] initWithCurrencies:self.currencies];
+    currencyPickerVC.delegate = self;
+    [self.navigationController pushViewController:currencyPickerVC animated:YES];
 }
-
-
-- (IBAction)swipeDownGesture:(id)sender
+- (IBAction)textDidChange:(id)sender
 {
-    // Hide picker view
-    [UIView animateWithDuration:0.3 animations:^{
-        self.slidingPickerView.frame = CGRectOffset(self.slidingPickerView.frame, 0, self.currenciesCollectionView.frame.size.height);
-    }];
+    [self.convertedCurrenciesTableView reloadData]; // TODO
 }
-
 
 #pragma mark - <UICollectionViewDataSource>
 
@@ -158,40 +134,19 @@ UICollectionViewDelegate>
     MSCurrencySummaryViewController *currencySummaryVC = [[MSCurrencySummaryViewController alloc] init];
     [self.navigationController pushViewController:currencySummaryVC animated:YES];
 }
+ 
+#pragma mark - <MSPickerDelegate>
 
-#pragma mark - <UICollectionViewDataSource>
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return [self.currencies count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCurrencyInfoCellIdentifier
-                                                                           forIndexPath:indexPath];
-
-    // Configure appearance
-    cell.layer.cornerRadius = 5.0;
-    cell.layer.masksToBounds = YES;
-
-    return cell;
-}
-
-#pragma mark - <UICollectionViewDelegate>
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)currencyPicker:(MSCurrencyPickerViewController *)picker didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{   
     [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
-
     [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                                      withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
-
     [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                                      withRowAnimation:UITableViewRowAnimationAutomatic];
 }

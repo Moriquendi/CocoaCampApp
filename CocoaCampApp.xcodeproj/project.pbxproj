@@ -34,6 +34,8 @@
 		908AF19F1708B99400087625 /* navBarBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF19D1708B99400087625 /* navBarBg@2x.png */; };
 		908AF1A11708BC8A00087625 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1A01708BC8A00087625 /* backButton@2x.png */; };
 		908AF1A31708BE5600087625 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1A21708BE5600087625 /* backButton.png */; };
+		908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */; };
+		908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,9 @@
 		908AF19D1708B99400087625 /* navBarBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navBarBg@2x.png"; path = "Images/navBarBg@2x.png"; sourceTree = "<group>"; };
 		908AF1A01708BC8A00087625 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Images/backButton@2x.png"; sourceTree = "<group>"; };
 		908AF1A21708BE5600087625 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backButton.png; path = Images/backButton.png; sourceTree = "<group>"; };
+		908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyPickerViewController.h; path = Controllers/MSCurrencyPickerViewController.h; sourceTree = "<group>"; };
+		908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyPickerViewController.m; path = Controllers/MSCurrencyPickerViewController.m; sourceTree = "<group>"; };
+		908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,9 @@
 				9019C7171707394A00AA2B41 /* MSRootViewController.h */,
 				9019C7181707394A00AA2B41 /* MSRootViewController.m */,
 				9019C71A1707394A00AA2B41 /* MSRootViewController.xib */,
+				908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */,
+				908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */,
+				908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +290,7 @@
 				908AF19F1708B99400087625 /* navBarBg@2x.png in Resources */,
 				908AF1A11708BC8A00087625 /* backButton@2x.png in Resources */,
 				908AF1A31708BE5600087625 /* backButton.png in Resources */,
+				908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +310,7 @@
 				908AF1851708400200087625 /* MSDataCurrency.m in Sources */,
 				908AF1891708537F00087625 /* MSFlagImageView.m in Sources */,
 				908AF19A1708B29D00087625 /* MSStyleSheet.m in Sources */,
+				908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
