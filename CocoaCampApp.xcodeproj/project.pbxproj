@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900C8FCC170A080B00F60EC9 /* NSObject+DeviceClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 900C8FCB170A080B00F60EC9 /* NSObject+DeviceClasses.m */; };
+		900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */; };
+		900C8FD1170A090200F60EC9 /* MSPadRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */; };
 		9019C7001707394A00AA2B41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C6FF1707394A00AA2B41 /* UIKit.framework */; };
 		9019C7021707394A00AA2B41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C7011707394A00AA2B41 /* Foundation.framework */; };
 		9019C7041707394A00AA2B41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C7031707394A00AA2B41 /* CoreGraphics.framework */; };
@@ -39,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		900C8FCA170A080B00F60EC9 /* NSObject+DeviceClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+DeviceClasses.h"; path = "Utils/NSObject+DeviceClasses.h"; sourceTree = "<group>"; };
+		900C8FCB170A080B00F60EC9 /* NSObject+DeviceClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+DeviceClasses.m"; path = "Utils/NSObject+DeviceClasses.m"; sourceTree = "<group>"; };
+		900C8FCD170A090200F60EC9 /* MSPadRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSPadRootViewController.h; path = Controllers/Pad/MSPadRootViewController.h; sourceTree = "<group>"; };
+		900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSPadRootViewController.m; path = Controllers/Pad/MSPadRootViewController.m; sourceTree = "<group>"; };
+		900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSPadRootViewController.xib; path = Controllers/Pad/MSPadRootViewController.xib; sourceTree = "<group>"; };
 		9019C6FC1707394A00AA2B41 /* CocoaCampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9019C6FF1707394A00AA2B41 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9019C7011707394A00AA2B41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		900C8FD2170A090600F60EC9 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				900C8FCD170A090200F60EC9 /* MSPadRootViewController.h */,
+				900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */,
+				900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		9019C6F31707394A00AA2B41 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +190,7 @@
 		908AF17C170834E900087625 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				900C8FD2170A090600F60EC9 /* iPad */,
 				908AF177170834E600087625 /* MSCurrencySummaryViewController.h */,
 				908AF178170834E600087625 /* MSCurrencySummaryViewController.m */,
 				908AF179170834E600087625 /* MSCurrencySummaryViewController.xib */,
@@ -220,6 +239,8 @@
 			children = (
 				908AF1981708B29C00087625 /* MSStyleSheet.h */,
 				908AF1991708B29C00087625 /* MSStyleSheet.m */,
+				900C8FCA170A080B00F60EC9 /* NSObject+DeviceClasses.h */,
+				900C8FCB170A080B00F60EC9 /* NSObject+DeviceClasses.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -291,6 +312,7 @@
 				908AF1A11708BC8A00087625 /* backButton@2x.png in Resources */,
 				908AF1A31708BE5600087625 /* backButton.png in Resources */,
 				908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */,
+				900C8FD1170A090200F60EC9 /* MSPadRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +333,8 @@
 				908AF1891708537F00087625 /* MSFlagImageView.m in Sources */,
 				908AF19A1708B29D00087625 /* MSStyleSheet.m in Sources */,
 				908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */,
+				900C8FCC170A080B00F60EC9 /* NSObject+DeviceClasses.m in Sources */,
+				900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +422,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCampApp/CocoaCampApp-Prefix.pch";
 				INFOPLIST_FILE = "CocoaCampApp/CocoaCampApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,7 +435,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaCampApp/CocoaCampApp-Prefix.pch";
 				INFOPLIST_FILE = "CocoaCampApp/CocoaCampApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

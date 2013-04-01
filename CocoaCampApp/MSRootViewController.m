@@ -11,7 +11,7 @@
 #import "MSCurrencySummaryViewController.h"
 #import "MSDataCurrency.h"
 #import "MSStyleSheet.h"
-#import "MSCurrencyPickerViewController.h"
+#import "NSObject+DeviceClasses.h"
 
 #define THUMB_SIZE              44
 #define TABLE_VIEW_CELL_HEIGHT  90
@@ -19,20 +19,31 @@
 NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
 @interface MSRootViewController ()
-<UITableViewDataSource,
-UITableViewDelegate,
-MSPickerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
-
+@property (nonatomic, readwrite, strong) NSArray *currencies; // of MSDataCurrency
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
-@property (nonatomic, strong) NSArray *currencies; // of MSDataCurrency
 @property (nonatomic, strong) NSMutableArray *selectedCurrenciesIndexes;
 
 @end
 
 @implementation MSRootViewController
+
+#pragma mark - NSObject
+
++ (id)alloc
+{
+    return [self deviceAlloc];
+}
+
+- (id)init
+{
+    if (self = [super initWithNibName:@"MSRootViewController" bundle:nil]) {
+        // Nothing here
+    }
+    return self;
+}
 
 #pragma mark - UIViewController
 

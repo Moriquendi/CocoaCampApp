@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSCurrencyPickerViewController.h"
 
 @interface MSRootViewController : UIViewController
+<UITableViewDataSource,
+UITableViewDelegate,
+MSPickerDelegate>
+
+@property (nonatomic, readonly, strong) NSArray *currencies; // of MSDataCurrency
 
 @end
