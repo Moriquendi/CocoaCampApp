@@ -25,7 +25,7 @@
     [super viewDidLoad];
 
     // Self
-    self.title = @"Summary";
+    self.title = NSLocalizedString(@"Summary", nil);
 
     // Flag image
     self.flagImageView.image = [UIImage imageNamed:@"usa-flag"];

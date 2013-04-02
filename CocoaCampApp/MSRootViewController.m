@@ -54,7 +54,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     // Appearance
     MSStyleSheet *styleSheet = [MSStyleSheet sharedInstance];
     self.view.backgroundColor = styleSheet.mainBackgroundColor;
-    self.title = @"Converter";
+    self.title = NSLocalizedString(@"Converter", nil);
     self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
     self.amountTextField.textColor = styleSheet.darkTextColor;
 
