@@ -8,6 +8,8 @@
 
 #import "MSStyleSheet.h"
 
+#define BACK_BUTTON_RESIZABLE_INSETS    UIEdgeInsetsMake(0, 15, 0, 5)
+
 @interface MSStyleSheet ()
 @property (nonatomic, readwrite, strong) UIColor *mainBackgroundColor;
 @property (nonatomic, readwrite, strong) UIColor *separatorColor;
@@ -58,11 +60,16 @@
 
 - (void)appleAppearanceProxies
 {
-    // Navigation Bar
+    // Navigation Bar background
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"navBarBg"] resizableImageWithCapInsets:UIEdgeInsetsZero]
                                        forBarMetrics:UIBarMetricsDefault];
 
-    UIImage *backImage = [[UIImage imageNamed:@"backButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 5)];
+    // Navigation Bar Title attributes
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor : [UIColor whiteColor],
+                         UITextAttributeTextShadowColor : [UIColor lightGrayColor]}];
+
+    // Navigation Bar buttons
+    UIImage *backImage = [[UIImage imageNamed:@"backButton"] resizableImageWithCapInsets:BACK_BUTTON_RESIZABLE_INSETS];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backImage
                                                       forState:UIControlStateNormal
                                                     barMetrics:UIBarMetricsDefault];

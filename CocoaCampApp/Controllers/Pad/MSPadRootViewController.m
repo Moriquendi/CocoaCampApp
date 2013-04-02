@@ -12,6 +12,7 @@
 @interface MSPadRootViewController ()
 @property (nonatomic, weak) IBOutlet UIView *currencySummaryView;
 @property (nonatomic, strong) UIPopoverController *pickerPopover;
+@property (nonatomic, strong) UIViewController *summaryVC;
 @end
 
 @implementation MSPadRootViewController
@@ -25,6 +26,15 @@
     }
     return self;
 }
+
+#pragma mark - UIViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.currencySummaryView.backgroundColor = [UIColor clearColor];
+}
+
 
 #pragma mark - MSRootViewController
 
@@ -45,17 +55,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: also remove older controller
     for (UIView *childView in self.currencySummaryView.subviews) {
         [childView removeFromSuperview];
     }
     
-    MSCurrencySummaryViewController *currencySummaryVC = [[MSCurrencySummaryViewController alloc] init];
+    [self.summaryVC removeFromParentViewController];
+    self.summaryVC = [[MSCurrencySummaryViewController alloc] init];
     
-    [self addChildViewController:currencySummaryVC];
-    [self.currencySummaryView addSubview:currencySummaryVC.view];
-    currencySummaryVC.view.frame = self.currencySummaryView.bounds;
-    
+    [self addChildViewController:self.summaryVC];
+    [self.currencySummaryView addSubview:self.summaryVC.view];
+    self.summaryVC.view.frame = self.currencySummaryView.bounds;
 }
 
 @end
