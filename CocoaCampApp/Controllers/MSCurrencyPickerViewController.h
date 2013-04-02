@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSViewController.h"
 
 @class MSCurrencyPickerViewController;
 
@@ -16,8 +17,11 @@
 - (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@interface MSCurrencyPickerViewController : UICollectionViewController
+@interface MSCurrencyPickerViewController : MSViewController
+<UICollectionViewDataSource,
+UICollectionViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) id <MSPickerDelegate> delegate;
 
 - (id)initWithCurrencies:(NSArray *)currencies; // designated initializer

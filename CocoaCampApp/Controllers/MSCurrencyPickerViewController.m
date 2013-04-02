@@ -29,10 +29,10 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     self.collectionView.delegate = self;
     
     // TODO: Put in stylesheet
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:0.3];
-    self.collectionView.layer.borderColor = [[MSStyleSheet sharedInstance].separatorColor CGColor];
-    self.collectionView.layer.borderWidth = 2.0;
-    self.collectionView.layer.cornerRadius = 5.0;
+//    self.collectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:0.3];
+//    self.collectionView.layer.borderColor = [[MSStyleSheet sharedInstance].separatorColor CGColor];
+//    self.collectionView.layer.borderWidth = 2.0;
+//    self.collectionView.layer.cornerRadius = 5.0;
     
     // Setting up collection view
     [self.collectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
@@ -44,9 +44,7 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 - (id)initWithCurrencies:(NSArray *)currencies
 {
-    // TODO:
-//    if (self = [super initWithNibName:@"MSCurrencyPickerViewController" bundle:nil]) {
-    if (self = [super initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]]) {
+    if (self = [super initWithNibName:@"MSCurrencyPickerViewController" bundle:nil]) {
         self.currencies = currencies;
     }
     return self;
