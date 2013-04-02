@@ -40,6 +40,7 @@
 		908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */; };
 		90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AEA5E9170B6AAE00DC008D /* MSViewController.m */; };
 		90ECC410170B597900EF7633 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */; };
+		90ECC413170B640E00EF7633 /* MSPadCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90ECC412170B640E00EF7633 /* MSPadCurrencyPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,8 @@
 		90AEA5E8170B6AAE00DC008D /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSViewController.h; path = Controllers/Universal/MSViewController.h; sourceTree = "<group>"; };
 		90AEA5E9170B6AAE00DC008D /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSViewController.m; path = Controllers/Universal/MSViewController.m; sourceTree = "<group>"; };
 		90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
+		90ECC411170B640E00EF7633 /* MSPadCurrencyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSPadCurrencyPickerViewController.h; path = Controllers/Pad/MSPadCurrencyPickerViewController.h; sourceTree = "<group>"; };
+		90ECC412170B640E00EF7633 /* MSPadCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSPadCurrencyPickerViewController.m; path = Controllers/Pad/MSPadCurrencyPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 		900C8FD2170A090600F60EC9 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				90ECC411170B640E00EF7633 /* MSPadCurrencyPickerViewController.h */,
+				90ECC412170B640E00EF7633 /* MSPadCurrencyPickerViewController.m */,
 				900C8FCD170A090200F60EC9 /* MSPadRootViewController.h */,
 				900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */,
 				900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */,
@@ -356,6 +361,7 @@
 				908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */,
 				900C8FCC170A080B00F60EC9 /* NSObject+DeviceClasses.m in Sources */,
 				900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */,
+				90ECC413170B640E00EF7633 /* MSPadCurrencyPickerViewController.m in Sources */,
 				90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

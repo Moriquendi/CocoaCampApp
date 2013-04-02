@@ -49,6 +49,9 @@
                                         inView:[sender superview]
                       permittedArrowDirections:UIPopoverArrowDirectionAny
                                       animated:YES];
+
+    [self.pickerPopover setPopoverContentSize:self.pickerPopover.contentViewController.contentSizeForViewInPopover
+                                     animated:YES];
 }
 
 #pragma mark - UITableViewDelegate
