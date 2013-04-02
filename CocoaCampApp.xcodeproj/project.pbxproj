@@ -38,7 +38,8 @@
 		908AF18B1708546000087625 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908AF18A1708546000087625 /* QuartzCore.framework */; };
 		908AF19A1708B29D00087625 /* MSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1991708B29C00087625 /* MSStyleSheet.m */; };
 		908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */; };
-		908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */; };
+		90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AEA5E9170B6AAE00DC008D /* MSViewController.m */; };
+		90ECC410170B597900EF7633 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +88,9 @@
 		908AF1991708B29C00087625 /* MSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSStyleSheet.m; path = Utils/MSStyleSheet.m; sourceTree = "<group>"; };
 		908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyPickerViewController.h; path = Controllers/MSCurrencyPickerViewController.h; sourceTree = "<group>"; };
 		908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyPickerViewController.m; path = Controllers/MSCurrencyPickerViewController.m; sourceTree = "<group>"; };
-		908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
+		90AEA5E8170B6AAE00DC008D /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSViewController.h; path = Controllers/Universal/MSViewController.h; sourceTree = "<group>"; };
+		90AEA5E9170B6AAE00DC008D /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSViewController.m; path = Controllers/Universal/MSViewController.m; sourceTree = "<group>"; };
+		90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +213,8 @@
 				9019C71A1707394A00AA2B41 /* MSRootViewController.xib */,
 				908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */,
 				908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */,
-				908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */,
+				90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */,
+				90AEA5E3170B673900DC008D /* Universal */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +255,15 @@
 				900C8FCB170A080B00F60EC9 /* NSObject+DeviceClasses.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		90AEA5E3170B673900DC008D /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				90AEA5E8170B6AAE00DC008D /* MSViewController.h */,
+				90AEA5E9170B6AAE00DC008D /* MSViewController.m */,
+			);
+			name = Universal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,12 +328,12 @@
 				908AF17B170834E600087625 /* MSCurrencySummaryViewController.xib in Resources */,
 				908AF17F1708386E00087625 /* usa-flag.png in Resources */,
 				908AF1801708386E00087625 /* usa-flag@2x.png in Resources */,
-				908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */,
 				900C8FD1170A090200F60EC9 /* MSPadRootViewController.xib in Resources */,
 				900C8FE1170ACA6100F60EC9 /* backButton.png in Resources */,
 				900C8FE2170ACA6100F60EC9 /* backButton@2x.png in Resources */,
 				900C8FE3170ACA6100F60EC9 /* navBarBg.png in Resources */,
 				900C8FE4170ACA6100F60EC9 /* navBarBg@2x.png in Resources */,
+				90ECC410170B597900EF7633 /* MSCurrencyPickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +356,7 @@
 				908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */,
 				900C8FCC170A080B00F60EC9 /* NSObject+DeviceClasses.m in Sources */,
 				900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */,
+				90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

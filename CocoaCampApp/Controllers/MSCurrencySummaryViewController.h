@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSViewController.h"
 
-@interface MSCurrencySummaryViewController : UIViewController
+@interface MSCurrencySummaryViewController : MSViewController
 
 @property (nonatomic, strong) NSArray *currencyImages;
 @property (nonatomic, strong) NSString *currencyDetails;

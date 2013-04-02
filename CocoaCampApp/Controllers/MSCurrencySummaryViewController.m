@@ -19,6 +19,7 @@
 
 @implementation MSCurrencySummaryViewController
 
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {

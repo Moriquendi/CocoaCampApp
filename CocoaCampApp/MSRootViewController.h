@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MSCurrencyPickerViewController.h"
+#import "MSViewController.h"
 
-@interface MSRootViewController : UIViewController
+@interface MSRootViewController : MSViewController
 <UITableViewDataSource,
 UITableViewDelegate,
 MSPickerDelegate>

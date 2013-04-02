@@ -11,7 +11,6 @@
 #import "MSCurrencySummaryViewController.h"
 #import "MSDataCurrency.h"
 #import "MSStyleSheet.h"
-#import "NSObject+DeviceClasses.h"
 
 #define THUMB_SIZE              44
 #define TABLE_VIEW_CELL_HEIGHT  90
@@ -31,11 +30,6 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 @implementation MSRootViewController
 
 #pragma mark - NSObject
-
-+ (id)alloc
-{
-    return [self deviceAlloc];
-}
 
 - (id)init
 {
