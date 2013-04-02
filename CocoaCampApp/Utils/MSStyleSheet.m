@@ -51,14 +51,29 @@
                                                     blue:66.f/255.f
                                                    alpha:1.0];
 
-        [self appleAppearanceProxies];
+        [self _applyAppearanceProxies];
     }
     return self;
 }
 
 #pragma mark - MSStyleSheet
 
-- (void)appleAppearanceProxies
+- (UIColor *)randomColorAtIndex:(NSUInteger)index
+{
+    CGFloat jump = 100;
+    CGFloat hue = 10.f + (int)(jump * index) % 360;
+    static CGFloat saturation = 73.f;
+    static CGFloat brightness = 95.f;
+    UIColor *randomColor = [UIColor colorWithHue:hue / 360.f
+                                      saturation:saturation / 100.f
+                                      brightness:brightness / 100.f
+                                           alpha:0.7];
+    return randomColor;
+}
+
+#pragma mark - MSStyleSheet ()
+
+- (void)_applyAppearanceProxies
 {
     // Navigation Bar background
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"navBarBg"] resizableImageWithCapInsets:UIEdgeInsetsZero]
@@ -81,19 +96,6 @@
     
     // Text field
     [[UITextField appearance] setBackgroundColor:[UIColor colorWithWhite:235./255. alpha:1.0]];
-}
-
-- (UIColor *)randomColorAtIndex:(NSUInteger)index
-{
-    CGFloat jump = 100;
-    CGFloat hue = 10.f + (int)(jump * index) % 360;
-    static CGFloat saturation = 73.f;
-    static CGFloat brightness = 95.f;
-    UIColor *randomColor = [UIColor colorWithHue:hue / 360.f
-                                      saturation:saturation / 100.f
-                                      brightness:brightness / 100.f
-                                           alpha:0.7];
-    return randomColor;
 }
 
 @end

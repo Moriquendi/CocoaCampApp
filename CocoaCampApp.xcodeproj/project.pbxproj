@@ -10,6 +10,10 @@
 		900C8FCC170A080B00F60EC9 /* NSObject+DeviceClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 900C8FCB170A080B00F60EC9 /* NSObject+DeviceClasses.m */; };
 		900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */; };
 		900C8FD1170A090200F60EC9 /* MSPadRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */; };
+		900C8FE1170ACA6100F60EC9 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FDD170ACA6100F60EC9 /* backButton.png */; };
+		900C8FE2170ACA6100F60EC9 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FDE170ACA6100F60EC9 /* backButton@2x.png */; };
+		900C8FE3170ACA6100F60EC9 /* navBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FDF170ACA6100F60EC9 /* navBarBg.png */; };
+		900C8FE4170ACA6100F60EC9 /* navBarBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 900C8FE0170ACA6100F60EC9 /* navBarBg@2x.png */; };
 		9019C7001707394A00AA2B41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C6FF1707394A00AA2B41 /* UIKit.framework */; };
 		9019C7021707394A00AA2B41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C7011707394A00AA2B41 /* Foundation.framework */; };
 		9019C7041707394A00AA2B41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019C7031707394A00AA2B41 /* CoreGraphics.framework */; };
@@ -33,10 +37,6 @@
 		908AF1891708537F00087625 /* MSFlagImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1881708537F00087625 /* MSFlagImageView.m */; };
 		908AF18B1708546000087625 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908AF18A1708546000087625 /* QuartzCore.framework */; };
 		908AF19A1708B29D00087625 /* MSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1991708B29C00087625 /* MSStyleSheet.m */; };
-		908AF19E1708B99400087625 /* navBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF19C1708B99400087625 /* navBarBg.png */; };
-		908AF19F1708B99400087625 /* navBarBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF19D1708B99400087625 /* navBarBg@2x.png */; };
-		908AF1A11708BC8A00087625 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1A01708BC8A00087625 /* backButton@2x.png */; };
-		908AF1A31708BE5600087625 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1A21708BE5600087625 /* backButton.png */; };
 		908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */; };
 		908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,10 @@
 		900C8FCD170A090200F60EC9 /* MSPadRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSPadRootViewController.h; path = Controllers/Pad/MSPadRootViewController.h; sourceTree = "<group>"; };
 		900C8FCE170A090200F60EC9 /* MSPadRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSPadRootViewController.m; path = Controllers/Pad/MSPadRootViewController.m; sourceTree = "<group>"; };
 		900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSPadRootViewController.xib; path = Controllers/Pad/MSPadRootViewController.xib; sourceTree = "<group>"; };
+		900C8FDD170ACA6100F60EC9 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backButton.png; path = Images/Navigation/backButton.png; sourceTree = "<group>"; };
+		900C8FDE170ACA6100F60EC9 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Images/Navigation/backButton@2x.png"; sourceTree = "<group>"; };
+		900C8FDF170ACA6100F60EC9 /* navBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navBarBg.png; path = Images/Navigation/navBarBg.png; sourceTree = "<group>"; };
+		900C8FE0170ACA6100F60EC9 /* navBarBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navBarBg@2x.png"; path = "Images/Navigation/navBarBg@2x.png"; sourceTree = "<group>"; };
 		9019C6FC1707394A00AA2B41 /* CocoaCampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9019C6FF1707394A00AA2B41 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9019C7011707394A00AA2B41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,10 +85,6 @@
 		908AF18A1708546000087625 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		908AF1981708B29C00087625 /* MSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSStyleSheet.h; path = Utils/MSStyleSheet.h; sourceTree = "<group>"; };
 		908AF1991708B29C00087625 /* MSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSStyleSheet.m; path = Utils/MSStyleSheet.m; sourceTree = "<group>"; };
-		908AF19C1708B99400087625 /* navBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navBarBg.png; path = Images/navBarBg.png; sourceTree = "<group>"; };
-		908AF19D1708B99400087625 /* navBarBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navBarBg@2x.png"; path = "Images/navBarBg@2x.png"; sourceTree = "<group>"; };
-		908AF1A01708BC8A00087625 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Images/backButton@2x.png"; sourceTree = "<group>"; };
-		908AF1A21708BE5600087625 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backButton.png; path = Images/backButton.png; sourceTree = "<group>"; };
 		908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyPickerViewController.h; path = Controllers/MSCurrencyPickerViewController.h; sourceTree = "<group>"; };
 		908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyPickerViewController.m; path = Controllers/MSCurrencyPickerViewController.m; sourceTree = "<group>"; };
 		908AF1B51709FD2100087625 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +113,17 @@
 				900C8FCF170A090200F60EC9 /* MSPadRootViewController.xib */,
 			);
 			name = iPad;
+			sourceTree = "<group>";
+		};
+		900C8FE5170ACA6400F60EC9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				900C8FDD170ACA6100F60EC9 /* backButton.png */,
+				900C8FDE170ACA6100F60EC9 /* backButton@2x.png */,
+				900C8FDF170ACA6100F60EC9 /* navBarBg.png */,
+				900C8FE0170ACA6100F60EC9 /* navBarBg@2x.png */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 		9019C6F31707394A00AA2B41 = {
@@ -207,10 +218,7 @@
 		908AF1811708387300087625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				908AF1A21708BE5600087625 /* backButton.png */,
-				908AF1A01708BC8A00087625 /* backButton@2x.png */,
-				908AF19C1708B99400087625 /* navBarBg.png */,
-				908AF19D1708B99400087625 /* navBarBg@2x.png */,
+				900C8FE5170ACA6400F60EC9 /* Navigation */,
 				908AF1821708387A00087625 /* Flags */,
 			);
 			name = Images;
@@ -307,12 +315,12 @@
 				908AF17B170834E600087625 /* MSCurrencySummaryViewController.xib in Resources */,
 				908AF17F1708386E00087625 /* usa-flag.png in Resources */,
 				908AF1801708386E00087625 /* usa-flag@2x.png in Resources */,
-				908AF19E1708B99400087625 /* navBarBg.png in Resources */,
-				908AF19F1708B99400087625 /* navBarBg@2x.png in Resources */,
-				908AF1A11708BC8A00087625 /* backButton@2x.png in Resources */,
-				908AF1A31708BE5600087625 /* backButton.png in Resources */,
 				908AF1B61709FD2100087625 /* MSCurrencyPickerViewController.xib in Resources */,
 				900C8FD1170A090200F60EC9 /* MSPadRootViewController.xib in Resources */,
+				900C8FE1170ACA6100F60EC9 /* backButton.png in Resources */,
+				900C8FE2170ACA6100F60EC9 /* backButton@2x.png in Resources */,
+				900C8FE3170ACA6100F60EC9 /* navBarBg.png in Resources */,
+				900C8FE4170ACA6100F60EC9 /* navBarBg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
