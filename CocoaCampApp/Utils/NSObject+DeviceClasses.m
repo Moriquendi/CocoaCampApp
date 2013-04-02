@@ -8,19 +8,23 @@
 
 #import "NSObject+DeviceClasses.h"
 
+#define CLASSES_PREFIX  @"MS"
+
 @implementation NSObject (DeviceClasses)
 
-+ (Class)deviceSpecificSubclassOf:(Class)parentClass
+#pragma mark - + NSObject (DeviceClasses)
+
++ (Class)_deviceSpecificSubclassOf:(Class)parentClass
 {
     UIUserInterfaceIdiom currentDevice = [UIDevice currentDevice].userInterfaceIdiom;
     NSString *parentClassName = NSStringFromClass(parentClass);
     NSMutableString *deviceClassName = [[NSMutableString alloc] initWithString:parentClassName];
     
     if (currentDevice == UIUserInterfaceIdiomPad) {
-        [deviceClassName insertString:@"Pad" atIndex:2];
+        [deviceClassName insertString:@"Pad" atIndex:[CLASSES_PREFIX length]];
     }
     else if (currentDevice == UIUserInterfaceIdiomPhone) {
-        [deviceClassName insertString:@"Phone" atIndex:2];
+        [deviceClassName insertString:@"Phone" atIndex:[CLASSES_PREFIX length]];
     }
     
     return NSClassFromString(deviceClassName);
@@ -28,15 +32,13 @@
 
 + (id)deviceAlloc
 {
-    Class deviceClass = [self deviceSpecificSubclassOf:self];
+    Class deviceClass = [self _deviceSpecificSubclassOf:self];
     
     if (deviceClass != nil) {
         return [deviceClass allocWithZone:nil];
-        return [deviceClass alloc];
     }
     else {
         return [self allocWithZone:nil];
-        return [self alloc];
     }
 }
 
