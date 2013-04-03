@@ -11,6 +11,7 @@
 #import "MSCurrencySummaryViewController.h"
 #import "MSDataCurrency.h"
 #import "MSStyleSheet.h"
+#import "MSClient.h"
 
 #define THUMB_SIZE              44
 #define TABLE_VIEW_CELL_HEIGHT  90
@@ -73,13 +74,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     // Selected currencies indexes
     self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
 
-    // Test data
-    NSMutableArray *currencies = [[NSMutableArray alloc] initWithCapacity:4];
-    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:1.4]];
-    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:2.0]];
-    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:2.7]];
-    [currencies addObject:[[MSDataCurrency alloc] initWithDollarRatio:5.0]];
-    self.currencies = currencies;
+    // Load data
+    self.currencies = [[MSClient sharedInstance] currenciesData];
 }
 
 #pragma mark - MSRootViewController
@@ -104,7 +100,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 }
 - (IBAction)textDidChange:(id)sender
 {
-    [self.convertedCurrenciesTableView reloadData]; // TODO
+#warning Code this better
+    [self.convertedCurrenciesTableView reloadData];
 }
 
 #pragma mark - <UICollectionViewDataSource>

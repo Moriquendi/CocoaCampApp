@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Dollar</string>
+	<key>ISOCurrencyCode</key>
+	<string>USD</string>
+	<key>flagImageName</key>
+	<string>usa-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>onedollarcoin</string>
+		<string>onedollar</string>
+		<string>halfdollar</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>1</integer>
+</dict>
+</plist>

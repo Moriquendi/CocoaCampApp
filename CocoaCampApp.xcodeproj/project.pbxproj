@@ -27,6 +27,9 @@
 		9019C71C1707394A00AA2B41 /* MSRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9019C71A1707394A00AA2B41 /* MSRootViewController.xib */; };
 		9030414D17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */; };
 		9030414F1707593F003F33AE /* MSCurrencyInfoCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */; };
+		9037221B170CC81700B51035 /* MSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9037221A170CC81700B51035 /* MSClient.m */; };
+		9037221D170CCADD00B51035 /* USD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9037221C170CCADD00B51035 /* USD.plist */; };
+		90372220170CCC9500B51035 /* CurrenciesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9037221F170CCC9500B51035 /* CurrenciesList.plist */; };
 		908AF17417079C3300087625 /* MSConvertedCurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */; };
 		908AF17617079C5D00087625 /* MSConvertedCurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */; };
 		908AF17A170834E600087625 /* MSCurrencySummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF178170834E600087625 /* MSCurrencySummaryViewController.m */; };
@@ -78,6 +81,10 @@
 		9030414B17075391003F33AE /* MSCurrencyInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyInfoCollectionViewCell.h; path = Views/MSCurrencyInfoCollectionViewCell.h; sourceTree = "<group>"; };
 		9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyInfoCollectionViewCell.m; path = Views/MSCurrencyInfoCollectionViewCell.m; sourceTree = "<group>"; };
 		9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyInfoCollectionView.xib; path = Views/MSCurrencyInfoCollectionView.xib; sourceTree = "<group>"; };
+		90372219170CC81700B51035 /* MSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSClient.h; path = Utils/MSClient.h; sourceTree = "<group>"; };
+		9037221A170CC81700B51035 /* MSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSClient.m; path = Utils/MSClient.m; sourceTree = "<group>"; };
+		9037221C170CCADD00B51035 /* USD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = USD.plist; path = Data/USD.plist; sourceTree = "<group>"; };
+		9037221F170CCC9500B51035 /* CurrenciesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CurrenciesList.plist; path = Data/CurrenciesList.plist; sourceTree = "<group>"; };
 		908AF17217079C3300087625 /* MSConvertedCurrencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSConvertedCurrencyTableViewCell.h; path = Views/MSConvertedCurrencyTableViewCell.h; sourceTree = "<group>"; };
 		908AF17317079C3300087625 /* MSConvertedCurrencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSConvertedCurrencyTableViewCell.m; path = Views/MSConvertedCurrencyTableViewCell.m; sourceTree = "<group>"; };
 		908AF17517079C5D00087625 /* MSConvertedCurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSConvertedCurrencyView.xib; path = Views/MSConvertedCurrencyView.xib; sourceTree = "<group>"; };
@@ -191,6 +198,7 @@
 		9019C7061707394A00AA2B41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9037221E170CCAE100B51035 /* Data */,
 				908AF1811708387300087625 /* Images */,
 				9019C7071707394A00AA2B41 /* CocoaCampApp-Info.plist */,
 				9019C7081707394A00AA2B41 /* InfoPlist.strings */,
@@ -216,6 +224,15 @@
 				908AF1881708537F00087625 /* MSFlagImageView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		9037221E170CCAE100B51035 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9037221F170CCC9500B51035 /* CurrenciesList.plist */,
+				9037221C170CCADD00B51035 /* USD.plist */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		908AF17C170834E900087625 /* Controllers */ = {
@@ -267,6 +284,8 @@
 		908AF19B1708B2A100087625 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				90372219170CC81700B51035 /* MSClient.h */,
+				9037221A170CC81700B51035 /* MSClient.m */,
 				908AF1981708B29C00087625 /* MSStyleSheet.h */,
 				908AF1991708B29C00087625 /* MSStyleSheet.m */,
 				900C8FCA170A080B00F60EC9 /* NSObject+DeviceClasses.h */,
@@ -371,6 +390,8 @@
 				90AEA5F4170B6F1C00DC008D /* onedollar@2x.png in Resources */,
 				90AEA5F5170B6F1C00DC008D /* onedollarcoin.png in Resources */,
 				90AEA5F6170B6F1C00DC008D /* onedollarcoin@2x.png in Resources */,
+				9037221D170CCADD00B51035 /* USD.plist in Resources */,
+				90372220170CCC9500B51035 /* CurrenciesList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +416,7 @@
 				900C8FD0170A090200F60EC9 /* MSPadRootViewController.m in Sources */,
 				90ECC413170B640E00EF7633 /* MSPadCurrencyPickerViewController.m in Sources */,
 				90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */,
+				9037221B170CC81700B51035 /* MSClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

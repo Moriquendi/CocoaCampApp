@@ -10,8 +10,12 @@
 
 @interface MSDataCurrency : NSObject
 
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSString *ISOCurrencyCode;
+@property (nonatomic, readonly) NSString *flagImageName;
+@property (nonatomic, readonly) NSArray *moneyImagesNames;
 @property (nonatomic, readonly) CGFloat toDollarRatio;
 
-- (id)initWithDollarRatio:(CGFloat)ratio;
+- (id)initWithContent:(NSDictionary *)content;
 
 @end
