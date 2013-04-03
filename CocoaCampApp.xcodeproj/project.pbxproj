@@ -39,6 +39,12 @@
 		908AF19A1708B29D00087625 /* MSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1991708B29C00087625 /* MSStyleSheet.m */; };
 		908AF1B11709F0C500087625 /* MSCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */; };
 		90AEA5EA170B6AAE00DC008D /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AEA5E9170B6AAE00DC008D /* MSViewController.m */; };
+		90AEA5F1170B6F1C00DC008D /* halfdollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5EB170B6F1C00DC008D /* halfdollar.png */; };
+		90AEA5F2170B6F1C00DC008D /* halfdollar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5EC170B6F1C00DC008D /* halfdollar@2x.png */; };
+		90AEA5F3170B6F1C00DC008D /* onedollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5ED170B6F1C00DC008D /* onedollar.png */; };
+		90AEA5F4170B6F1C00DC008D /* onedollar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5EE170B6F1C00DC008D /* onedollar@2x.png */; };
+		90AEA5F5170B6F1C00DC008D /* onedollarcoin.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5EF170B6F1C00DC008D /* onedollarcoin.png */; };
+		90AEA5F6170B6F1C00DC008D /* onedollarcoin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90AEA5F0170B6F1C00DC008D /* onedollarcoin@2x.png */; };
 		90ECC410170B597900EF7633 /* MSCurrencyPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */; };
 		90ECC413170B640E00EF7633 /* MSPadCurrencyPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90ECC412170B640E00EF7633 /* MSPadCurrencyPickerViewController.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +97,12 @@
 		908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyPickerViewController.m; path = Controllers/MSCurrencyPickerViewController.m; sourceTree = "<group>"; };
 		90AEA5E8170B6AAE00DC008D /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSViewController.h; path = Controllers/Universal/MSViewController.h; sourceTree = "<group>"; };
 		90AEA5E9170B6AAE00DC008D /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSViewController.m; path = Controllers/Universal/MSViewController.m; sourceTree = "<group>"; };
+		90AEA5EB170B6F1C00DC008D /* halfdollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = halfdollar.png; path = Images/Money/halfdollar.png; sourceTree = "<group>"; };
+		90AEA5EC170B6F1C00DC008D /* halfdollar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "halfdollar@2x.png"; path = "Images/Money/halfdollar@2x.png"; sourceTree = "<group>"; };
+		90AEA5ED170B6F1C00DC008D /* onedollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onedollar.png; path = Images/Money/onedollar.png; sourceTree = "<group>"; };
+		90AEA5EE170B6F1C00DC008D /* onedollar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onedollar@2x.png"; path = "Images/Money/onedollar@2x.png"; sourceTree = "<group>"; };
+		90AEA5EF170B6F1C00DC008D /* onedollarcoin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onedollarcoin.png; path = Images/Money/onedollarcoin.png; sourceTree = "<group>"; };
+		90AEA5F0170B6F1C00DC008D /* onedollarcoin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onedollarcoin@2x.png"; path = "Images/Money/onedollarcoin@2x.png"; sourceTree = "<group>"; };
 		90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyPickerViewController.xib; path = Controllers/MSCurrencyPickerViewController.xib; sourceTree = "<group>"; };
 		90ECC411170B640E00EF7633 /* MSPadCurrencyPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSPadCurrencyPickerViewController.h; path = Controllers/Pad/MSPadCurrencyPickerViewController.h; sourceTree = "<group>"; };
 		90ECC412170B640E00EF7633 /* MSPadCurrencyPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSPadCurrencyPickerViewController.m; path = Controllers/Pad/MSPadCurrencyPickerViewController.m; sourceTree = "<group>"; };
@@ -227,6 +239,7 @@
 		908AF1811708387300087625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				90AEA5F7170B6F2300DC008D /* Money */,
 				900C8FE5170ACA6400F60EC9 /* Navigation */,
 				908AF1821708387A00087625 /* Flags */,
 			);
@@ -269,6 +282,19 @@
 				90AEA5E9170B6AAE00DC008D /* MSViewController.m */,
 			);
 			name = Universal;
+			sourceTree = "<group>";
+		};
+		90AEA5F7170B6F2300DC008D /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				90AEA5EB170B6F1C00DC008D /* halfdollar.png */,
+				90AEA5EC170B6F1C00DC008D /* halfdollar@2x.png */,
+				90AEA5ED170B6F1C00DC008D /* onedollar.png */,
+				90AEA5EE170B6F1C00DC008D /* onedollar@2x.png */,
+				90AEA5EF170B6F1C00DC008D /* onedollarcoin.png */,
+				90AEA5F0170B6F1C00DC008D /* onedollarcoin@2x.png */,
+			);
+			name = Money;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +365,12 @@
 				900C8FE3170ACA6100F60EC9 /* navBarBg.png in Resources */,
 				900C8FE4170ACA6100F60EC9 /* navBarBg@2x.png in Resources */,
 				90ECC410170B597900EF7633 /* MSCurrencyPickerViewController.xib in Resources */,
+				90AEA5F1170B6F1C00DC008D /* halfdollar.png in Resources */,
+				90AEA5F2170B6F1C00DC008D /* halfdollar@2x.png in Resources */,
+				90AEA5F3170B6F1C00DC008D /* onedollar.png in Resources */,
+				90AEA5F4170B6F1C00DC008D /* onedollar@2x.png in Resources */,
+				90AEA5F5170B6F1C00DC008D /* onedollarcoin.png in Resources */,
+				90AEA5F6170B6F1C00DC008D /* onedollarcoin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

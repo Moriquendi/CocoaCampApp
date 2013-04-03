@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
-@property (weak, nonatomic) IBOutlet UIView *currencySymbolBgView;
 
 @end
 
@@ -25,7 +24,6 @@
 - (void)setCurrencySymbolBgColor:(UIColor *)currencySymbolBgColor
 {
     _currencySymbolBgColor= currencySymbolBgColor;
-    self.currencySymbolBgView.backgroundColor = currencySymbolBgColor;
     self.currencyNameLabel.textColor = currencySymbolBgColor;
 }
 
