@@ -63,7 +63,7 @@
     }
     
     [self.summaryVC removeFromParentViewController];
-    self.summaryVC = [[MSCurrencySummaryViewController alloc] init];
+    self.summaryVC = [[MSCurrencySummaryViewController alloc] initWithCurrencyData:self.currencies[indexPath.row]];
     
     [self addChildViewController:self.summaryVC];
     [self.currencySummaryView addSubview:self.summaryVC.view];

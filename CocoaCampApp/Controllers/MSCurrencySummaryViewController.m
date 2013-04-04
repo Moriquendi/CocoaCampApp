@@ -14,7 +14,9 @@
 //@property (weak, nonatomic) IBOutlet UIWebView *currencyDetailsWebView;
 @property (weak, nonatomic) IBOutlet UITextView *currencyDetailsTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *currenciesImagesScrollView;
-
+@property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
+@property (nonatomic, strong) NSMutableArray *currencyImages;
+@property (nonatomic, strong) MSDataCurrency *currencyData;
 @end
 
 @implementation MSCurrencySummaryViewController
@@ -29,16 +31,17 @@
     self.title = NSLocalizedString(@"Summary", nil);
 
     // Flag image
-    self.flagImageView.image = [UIImage imageNamed:@"usa-flag"];
+    self.flagImageView.image = [UIImage imageNamed:self.currencyData.flagImageName];
 
     // Currency details text view
-    self.currencyDetailsTextView.text = @"Bla bla bla\nBlabla bla\nBlaBla Bla\nBla.";
+    self.currencyDetailsTextView.text = self.currencyData.currencyDescription;
 
+    self.currencyImages = [[NSMutableArray alloc] init];
     // Scroll view with images of money.
-    UIImage *im1 = [UIImage imageNamed:@"halfdollar"];
-    UIImage *im2 = [UIImage imageNamed:@"onedollar"];
-    UIImage *im3 = [UIImage imageNamed:@"onedollarcoin"];
-    self.currencyImages = @[im1, im2, im3];
+    for (NSString *imageName in self.currencyData.moneyImagesNames) {
+        UIImage *image = [UIImage imageNamed:imageName];
+        [self.currencyImages addObject:image];
+    }
 
     NSInteger pageNumber = 0;
 
@@ -49,7 +52,7 @@
     }
 
     for (UIImageView *imageView in imageViews) {
-        imageView.contentMode = UIViewContentModeCenter;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.frame = CGRectOffset(self.currenciesImagesScrollView.bounds,
                                        pageNumber * self.currenciesImagesScrollView.bounds.size.width,
                                        0);
@@ -113,6 +116,17 @@
 {
     self.currenciesImagesScrollView.contentSize = CGSizeMake(self.currenciesImagesScrollView.bounds.size.width * [self.currencyImages count],
                                                              self.currenciesImagesScrollView.bounds.size.height);
+}
+
+#pragma mark - MSCurrencySummaryViewController
+
+
+- (id)initWithCurrencyData:(MSDataCurrency *)currency
+{
+    if (self = [super init]) {
+        self.currencyData = currency;
+    }
+    return self;
 }
 
 @end

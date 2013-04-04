@@ -14,7 +14,7 @@
 NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 @interface MSCurrencyPickerViewController ()
-@property (nonatomic, strong) NSArray *currencies;
+@property (nonatomic, readwrite, strong) NSArray *currencies;
 @end
 
 @implementation MSCurrencyPickerViewController

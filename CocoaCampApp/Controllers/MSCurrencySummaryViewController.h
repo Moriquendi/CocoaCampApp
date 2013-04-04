@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MSViewController.h"
+#import "MSDataCurrency.h"
 
 @interface MSCurrencySummaryViewController : MSViewController
 
-@property (nonatomic, strong) NSArray *currencyImages;
-@property (nonatomic, strong) NSString *currencyDetails;
+- (id)initWithCurrencyData:(MSDataCurrency *)currency;
 
 @end
