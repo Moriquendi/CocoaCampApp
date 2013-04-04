@@ -47,7 +47,7 @@
     self.pickerPopover = [[UIPopoverController alloc] initWithContentViewController:currencyPickerVC];
     [self.pickerPopover presentPopoverFromRect:((UIView *)sender).frame
                                         inView:[sender superview]
-                      permittedArrowDirections:UIPopoverArrowDirectionAny
+                      permittedArrowDirections:UIPopoverArrowDirectionUp// UIPopoverArrowDirectionAny
                                       animated:YES];
 
     [self.pickerPopover setPopoverContentSize:self.pickerPopover.contentViewController.contentSizeForViewInPopover

@@ -29,8 +29,8 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     self.collectionView.delegate = self;
     
     // TODO: Put in stylesheet
-//    self.collectionView.backgroundColor = [UIColor colorWithWhite:70.f/255.f alpha:0.3];
-//    self.collectionView.layer.borderColor = [[MSStyleSheet sharedInstance].separatorColor CGColor];
+    self.collectionView.backgroundColor = [[MSStyleSheet sharedInstance] mainBackgroundColor];
+    self.collectionView.layer.borderColor = [[MSStyleSheet sharedInstance].separatorColor CGColor];
 //    self.collectionView.layer.borderWidth = 2.0;
 //    self.collectionView.layer.cornerRadius = 5.0;
     

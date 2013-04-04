@@ -38,9 +38,9 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.mainBackgroundColor = [UIColor colorWithRed:242.f/255.f
-                                                   green:241.f/255.f
-                                                    blue:237.f/255.f
+        self.mainBackgroundColor = [UIColor colorWithRed:252.f/255.f
+                                                   green:251.f/255.f
+                                                    blue:247.f/255.f
                                                    alpha:1.0];
         self.separatorColor = [UIColor colorWithWhite:100.f/255.f alpha:0.6];
         self.darkTextColor = [UIColor colorWithWhite:51.f/255.f alpha:1.0];
