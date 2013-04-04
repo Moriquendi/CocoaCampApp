@@ -13,8 +13,10 @@
 #import "MSStyleSheet.h"
 #import "MSClient.h"
 
-#define THUMB_SIZE              44
-#define TABLE_VIEW_CELL_HEIGHT  90
+#define THUMB_SIZE                         44
+#define TABLE_VIEW_CELL_HEIGHT             90
+#define SOURCE_CURRENCY_TAG                1
+#define DESTINATION_CURRENCY_TAG           2
 
 NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
@@ -25,6 +27,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 @property (nonatomic, readwrite, strong) NSArray *currencies; // of MSDataCurrency
 @property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
 @property (nonatomic, strong) NSMutableArray *selectedCurrenciesIndexes;
+@property (nonatomic) NSUInteger sourceCurrencyIndex;
 
 @end
 
@@ -96,6 +99,18 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 {
     MSCurrencyPickerViewController *currencyPickerVC = [[MSCurrencyPickerViewController alloc] initWithCurrencies:self.currencies];
     currencyPickerVC.delegate = self;
+    
+    switch ([sender tag]) {
+        case SOURCE_CURRENCY_TAG:
+            currencyPickerVC.enableMultipleSelection = NO;
+            break;
+        case DESTINATION_CURRENCY_TAG:
+            currencyPickerVC.enableMultipleSelection = YES;
+            break;
+        default:
+            break;
+    }
+    currencyPickerVC.tag = [sender tag];
     [self.navigationController pushViewController:currencyPickerVC animated:YES];
 }
 - (IBAction)textDidChange:(id)sender
@@ -140,17 +155,36 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 #pragma mark - <MSPickerDelegate>
 
 - (void)currencyPicker:(MSCurrencyPickerViewController *)picker didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{   
-    [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
-    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+{
+    switch ([picker tag]) {
+        case SOURCE_CURRENCY_TAG:
+            self.sourceCurrencyIndex = indexPath.item;
+            break;
+        case DESTINATION_CURRENCY_TAG:
+            if (![self.selectedCurrenciesIndexes containsObject:@(indexPath.item)]) {
+                [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
+                [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                                 withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
-    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+    switch ([picker tag]) {
+        case SOURCE_CURRENCY_TAG:
+            break;
+        case DESTINATION_CURRENCY_TAG:
+            [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
+            [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                             withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

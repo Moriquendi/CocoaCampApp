@@ -121,6 +121,7 @@
 						<string key="NSFrame">{{0, 162}, {320, 298}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="257972979">
 							<int key="NSColorSpace">3</int>
@@ -166,6 +167,7 @@
 						<reference key="NSNextKeyView" ref="100484874"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
+						<int key="IBUITag">1</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
@@ -198,6 +200,7 @@
 						<reference key="NSNextKeyView" ref="553596202"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
+						<int key="IBUITag">2</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
@@ -423,7 +426,7 @@
 								<float key="scoringTypeFloat">24</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="590231792">
+							<object class="IBNSLayoutConstraint" id="320449144">
 								<reference key="firstItem" ref="553596202"/>
 								<int key="firstAttribute">4</int>
 								<int key="relation">0</int>
@@ -775,7 +778,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">615</int>
-						<reference key="object" ref="590231792"/>
+						<reference key="object" ref="320449144"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -839,7 +842,7 @@
 					<reference ref="774440280"/>
 					<reference ref="790900766"/>
 					<reference ref="1039274684"/>
-					<reference ref="590231792"/>
+					<reference ref="320449144"/>
 					<reference ref="662516499"/>
 					<reference ref="1029473033"/>
 					<reference ref="30833161"/>

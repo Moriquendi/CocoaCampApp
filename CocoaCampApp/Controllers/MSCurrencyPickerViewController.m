@@ -19,6 +19,12 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 @implementation MSCurrencyPickerViewController
 
+- (void)setEnableMultipleSelection:(BOOL)enableMultipleSelection
+{
+    _enableMultipleSelection = enableMultipleSelection;
+    self.collectionView.allowsMultipleSelection = enableMultipleSelection;
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
@@ -37,7 +43,7 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     // Setting up collection view
     [self.collectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
                       forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
-    self.collectionView.allowsMultipleSelection = YES;
+    self.collectionView.allowsMultipleSelection = self.isMultipleSelectionEnabled;
 }
 
 #pragma mark - MSCurrencyPickerViewController
@@ -46,6 +52,8 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 {
     if (self = [super initWithNibName:@"MSCurrencyPickerViewController" bundle:nil]) {
         self.currencies = currencies;
+        self.enableMultipleSelection = NO;
+        self.tag = 0;
     }
     return self;
 }
@@ -78,9 +86,9 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     }
 }
 
-- (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.delegate respondsToSelector:@selector(currencyPicker:didDeselectItemAtIndexPath::)]) {
+    if ([self.delegate respondsToSelector:@selector(currencyPicker:didDeselectItemAtIndexPath:)]) {
         [self.delegate currencyPicker:self didDeselectItemAtIndexPath:indexPath];
     }
 }
