@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Egyptian pound</string>
+	<key>ISOCurrencyCode</key>
+	<string>EGP</string>
+	<key>flagImageName</key>
+	<string>egypt-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>egp1</string>
+		<string>egp2</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The Egyptian pound (Arabic: الجنيه المصرى‎ eg-Genēh el-Maṣri  Egyptian Arabic pronunciation: [egɡeˈneːh elˈmɑsˤɾi] or in Alexandrian accent: eg-Geni-l-Maṣri  [elˈɡeni (ʔe)lˈmɑsˤɾi]) (sign: E£ or ج.م; code: EGP) is the currency of Egypt. It is divided into 100 piastre, or qirsh (قرش  [ʔeɾʃ]; plural قروش  [ʔʊˈɾuːʃ, ʔɪˈɾuːʃ]; Turkish: Kuruş), or 1,000 milliemes (Arabic: مليم‎  [mælˈliːm]; French: Millième).
+The ISO 4217 code is EGP. Locally, the abbreviation LE or L.E., which stands for livre égyptienne (French for Egyptian pound) is frequently used. E£ and £E are rarely used. The name Gineih (Genēh / Geni  [ɡeˈneː(h), ˈɡeni]) is derived from the Guinea coin, which had almost the same value of 100 piastres at the end of the 19th century.</string>
+</dict>
+</plist>

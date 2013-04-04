@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Argentine peso</string>
+	<key>ISOCurrencyCode</key>
+	<string>ARS</string>
+	<key>flagImageName</key>
+	<string>argentine-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>argentine-peso</string>
+		<string>ARS-1-peso-argentino</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The peso (originally established as the peso convertible) is the currency of Argentina, identified by the symbol $ preceding the amount in the same way as many countries using dollar currencies. It is subdivided into 100 centavos. Its ISO 4217 code is ARS. Several earlier currencies of Argentina were also called &quot;peso&quot;; as inflation progressed a new currency with a few zeroes dropped and a different qualifier (peso national currency, peso law 18188, peso argentino...) was introduced. Since 1969 thirteen zeroes have been dropped (a factor of ten trillion).
+In recent times the exchange rate hovered around 3 pesos per United States dollar from 2002 to 2008, was around 4 pesos from 2009 to 2011, and has been nearly 5 pesos since the start of 2012. The country&apos;s current account surplus has required periodic dollar purchases by the Central Bank to keep the value of the peso relatively undervalued for export competitiveness.</string>
+</dict>
+</plist>

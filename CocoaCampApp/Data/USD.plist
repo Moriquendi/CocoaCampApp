@@ -16,5 +16,9 @@
 	</array>
 	<key>toDollarRatio</key>
 	<integer>1</integer>
+	<key>description</key>
+	<string>The dollar (often represented by the dollar sign $) is the name of the official currency or a banknote of many countries, territories and dependencies, including Australia, Belize, Canada, Hong Kong, New Zealand, Singapore, Taiwan, Brunei and the United States. Generally, one dollar is equal to 100 cents.
+History
+On 15 January 1520, Bohemia began minting coins from locally mined silver in Joachimsthal known as &quot;Joachimsthaler&quot;. This name became shortened in common usage to thaler or taler. The German name Joachimsthal literally means Joachim&apos;s valley or Joachim&apos;s dale. This name found its way into other languages: Czech tolar, Hungarian tallér, Danish and Norwegian (rigs) daler, Swedish (riks) daler, Icelandic dalur, Dutch (rijks) daalder or daler, Ethiopian ታላሪ (&quot;talari&quot;), Italian tallero, Flemish daelder, Polish Talar, Persian Dare, as well as - via Dutch - into English as dollar.</string>
 </dict>
 </plist>

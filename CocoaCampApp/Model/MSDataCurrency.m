@@ -10,10 +10,11 @@
 
 @interface MSDataCurrency ()
 
-@property (nonatomic, readwrite) NSString *fullName;
-@property (nonatomic, readwrite) NSString *ISOCurrencyCode;
-@property (nonatomic, readwrite) NSString *flagImageName;
-@property (nonatomic, readwrite) NSArray *moneyImagesNames;
+@property (nonatomic, readwrite, strong) NSString *fullName;
+@property (nonatomic, readwrite, strong) NSString *ISOCurrencyCode;
+@property (nonatomic, readwrite, strong) NSString *flagImageName;
+@property (nonatomic, readwrite, strong) NSArray *moneyImagesNames;
+@property (nonatomic, readwrite, strong) NSString *currencyDescription;
 @property (nonatomic, readwrite) CGFloat toDollarRatio;
 
 @end
@@ -27,6 +28,7 @@
         self.ISOCurrencyCode = content[@"ISOCurrencyCode"];
         self.flagImageName = content[@"flagImageName"];
         self.moneyImagesNames = content[@"moneyImagesNames"];
+        self.currencyDescription = content[@"description"];
         self.toDollarRatio = [content[@"toDollarRatio"] floatValue];
     }
     return self;

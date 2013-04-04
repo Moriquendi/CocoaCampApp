@@ -22,6 +22,7 @@
 UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, readonly, strong) NSArray *currencies;
 @property (nonatomic, weak) id <MSPickerDelegate> delegate;
 
 - (id)initWithCurrencies:(NSArray *)currencies; // designated initializer

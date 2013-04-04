@@ -31,6 +31,35 @@
 		902390F8170DF33700F85032 /* zloty100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902390F4170DF33700F85032 /* zloty100@2x.png */; };
 		902390FB170DF3B600F85032 /* poland-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 902390F9170DF3B600F85032 /* poland-flag.png */; };
 		902390FC170DF3B600F85032 /* poland-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 902390FA170DF3B600F85032 /* poland-flag@2x.png */; };
+		902390FE170DFE6F00F85032 /* PLN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902390FD170DFE6F00F85032 /* PLN.plist */; };
+		90239105170E03A100F85032 /* ARS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90239101170E03A100F85032 /* ARS.plist */; };
+		90239106170E03A100F85032 /* EGP.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90239102170E03A100F85032 /* EGP.plist */; };
+		90239107170E03A100F85032 /* EUR.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90239103170E03A100F85032 /* EUR.plist */; };
+		90239108170E03A100F85032 /* GBP.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90239104170E03A100F85032 /* GBP.plist */; };
+		9023910D170E089800F85032 /* argentine-peso.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239109170E089800F85032 /* argentine-peso.png */; };
+		9023910E170E089800F85032 /* argentine-peso@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023910A170E089800F85032 /* argentine-peso@2x.png */; };
+		9023910F170E089800F85032 /* ARS-1-peso-argentino.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023910B170E089800F85032 /* ARS-1-peso-argentino.png */; };
+		90239110170E089800F85032 /* ARS-1-peso-argentino@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023910C170E089800F85032 /* ARS-1-peso-argentino@2x.png */; };
+		90239115170E096100F85032 /* egp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239111170E096100F85032 /* egp1.png */; };
+		90239116170E096100F85032 /* egp1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239112170E096100F85032 /* egp1@2x.png */; };
+		90239117170E096100F85032 /* egp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239113170E096100F85032 /* egp2.png */; };
+		90239118170E096100F85032 /* egp2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239114170E096100F85032 /* egp2@2x.png */; };
+		9023911D170E09FF00F85032 /* euro1.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239119170E09FF00F85032 /* euro1.png */; };
+		9023911E170E09FF00F85032 /* euro1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023911A170E09FF00F85032 /* euro1@2x.png */; };
+		9023911F170E09FF00F85032 /* euro500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023911B170E09FF00F85032 /* euro500.png */; };
+		90239120170E09FF00F85032 /* euro500@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023911C170E09FF00F85032 /* euro500@2x.png */; };
+		90239125170E0ABC00F85032 /* 1penny.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239121170E0ABC00F85032 /* 1penny.png */; };
+		90239126170E0ABC00F85032 /* 1penny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239122170E0ABC00F85032 /* 1penny@2x.png */; };
+		90239127170E0ABC00F85032 /* gbp5.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239123170E0ABC00F85032 /* gbp5.png */; };
+		90239128170E0ABC00F85032 /* gbp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239124170E0ABC00F85032 /* gbp5@2x.png */; };
+		90239131170E108000F85032 /* argentine-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239129170E108000F85032 /* argentine-flag.png */; };
+		90239132170E108000F85032 /* argentine-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912A170E108000F85032 /* argentine-flag@2x.png */; };
+		90239133170E108000F85032 /* egypt-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912B170E108000F85032 /* egypt-flag.png */; };
+		90239134170E108000F85032 /* egypt-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912C170E108000F85032 /* egypt-flag@2x.png */; };
+		90239135170E108000F85032 /* eu-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912D170E108000F85032 /* eu-flag.png */; };
+		90239136170E108000F85032 /* eu-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912E170E108000F85032 /* eu-flag@2x.png */; };
+		90239137170E108000F85032 /* uk-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9023912F170E108000F85032 /* uk-flag.png */; };
+		90239138170E108000F85032 /* uk-flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90239130170E108000F85032 /* uk-flag@2x.png */; };
 		9030414D17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */; };
 		9030414F1707593F003F33AE /* MSCurrencyInfoCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */; };
 		9037221B170CC81700B51035 /* MSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9037221A170CC81700B51035 /* MSClient.m */; };
@@ -90,6 +119,35 @@
 		902390F4170DF33700F85032 /* zloty100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zloty100@2x.png"; path = "Images/Money/zloty100@2x.png"; sourceTree = "<group>"; };
 		902390F9170DF3B600F85032 /* poland-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "poland-flag.png"; path = "Images/Flags/poland-flag.png"; sourceTree = "<group>"; };
 		902390FA170DF3B600F85032 /* poland-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "poland-flag@2x.png"; path = "Images/Flags/poland-flag@2x.png"; sourceTree = "<group>"; };
+		902390FD170DFE6F00F85032 /* PLN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PLN.plist; path = Data/PLN.plist; sourceTree = "<group>"; };
+		90239101170E03A100F85032 /* ARS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ARS.plist; path = Data/ARS.plist; sourceTree = "<group>"; };
+		90239102170E03A100F85032 /* EGP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = EGP.plist; path = Data/EGP.plist; sourceTree = "<group>"; };
+		90239103170E03A100F85032 /* EUR.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = EUR.plist; path = Data/EUR.plist; sourceTree = "<group>"; };
+		90239104170E03A100F85032 /* GBP.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GBP.plist; path = Data/GBP.plist; sourceTree = "<group>"; };
+		90239109170E089800F85032 /* argentine-peso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "argentine-peso.png"; path = "Images/Money/argentine-peso.png"; sourceTree = "<group>"; };
+		9023910A170E089800F85032 /* argentine-peso@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "argentine-peso@2x.png"; path = "Images/Money/argentine-peso@2x.png"; sourceTree = "<group>"; };
+		9023910B170E089800F85032 /* ARS-1-peso-argentino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ARS-1-peso-argentino.png"; path = "Images/Money/ARS-1-peso-argentino.png"; sourceTree = "<group>"; };
+		9023910C170E089800F85032 /* ARS-1-peso-argentino@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ARS-1-peso-argentino@2x.png"; path = "Images/Money/ARS-1-peso-argentino@2x.png"; sourceTree = "<group>"; };
+		90239111170E096100F85032 /* egp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egp1.png; path = Images/Money/egp1.png; sourceTree = "<group>"; };
+		90239112170E096100F85032 /* egp1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egp1@2x.png"; path = "Images/Money/egp1@2x.png"; sourceTree = "<group>"; };
+		90239113170E096100F85032 /* egp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egp2.png; path = Images/Money/egp2.png; sourceTree = "<group>"; };
+		90239114170E096100F85032 /* egp2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egp2@2x.png"; path = "Images/Money/egp2@2x.png"; sourceTree = "<group>"; };
+		90239119170E09FF00F85032 /* euro1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = euro1.png; path = Images/Money/euro1.png; sourceTree = "<group>"; };
+		9023911A170E09FF00F85032 /* euro1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "euro1@2x.png"; path = "Images/Money/euro1@2x.png"; sourceTree = "<group>"; };
+		9023911B170E09FF00F85032 /* euro500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = euro500.png; path = Images/Money/euro500.png; sourceTree = "<group>"; };
+		9023911C170E09FF00F85032 /* euro500@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "euro500@2x.png"; path = "Images/Money/euro500@2x.png"; sourceTree = "<group>"; };
+		90239121170E0ABC00F85032 /* 1penny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1penny.png; path = Images/Money/1penny.png; sourceTree = "<group>"; };
+		90239122170E0ABC00F85032 /* 1penny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1penny@2x.png"; path = "Images/Money/1penny@2x.png"; sourceTree = "<group>"; };
+		90239123170E0ABC00F85032 /* gbp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gbp5.png; path = Images/Money/gbp5.png; sourceTree = "<group>"; };
+		90239124170E0ABC00F85032 /* gbp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gbp5@2x.png"; path = "Images/Money/gbp5@2x.png"; sourceTree = "<group>"; };
+		90239129170E108000F85032 /* argentine-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "argentine-flag.png"; path = "Images/Flags/argentine-flag.png"; sourceTree = "<group>"; };
+		9023912A170E108000F85032 /* argentine-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "argentine-flag@2x.png"; path = "Images/Flags/argentine-flag@2x.png"; sourceTree = "<group>"; };
+		9023912B170E108000F85032 /* egypt-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egypt-flag.png"; path = "Images/Flags/egypt-flag.png"; sourceTree = "<group>"; };
+		9023912C170E108000F85032 /* egypt-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "egypt-flag@2x.png"; path = "Images/Flags/egypt-flag@2x.png"; sourceTree = "<group>"; };
+		9023912D170E108000F85032 /* eu-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eu-flag.png"; path = "Images/Flags/eu-flag.png"; sourceTree = "<group>"; };
+		9023912E170E108000F85032 /* eu-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eu-flag@2x.png"; path = "Images/Flags/eu-flag@2x.png"; sourceTree = "<group>"; };
+		9023912F170E108000F85032 /* uk-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uk-flag.png"; path = "Images/Flags/uk-flag.png"; sourceTree = "<group>"; };
+		90239130170E108000F85032 /* uk-flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "uk-flag@2x.png"; path = "Images/Flags/uk-flag@2x.png"; sourceTree = "<group>"; };
 		9030414B17075391003F33AE /* MSCurrencyInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyInfoCollectionViewCell.h; path = Views/MSCurrencyInfoCollectionViewCell.h; sourceTree = "<group>"; };
 		9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyInfoCollectionViewCell.m; path = Views/MSCurrencyInfoCollectionViewCell.m; sourceTree = "<group>"; };
 		9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyInfoCollectionView.xib; path = Views/MSCurrencyInfoCollectionView.xib; sourceTree = "<group>"; };
@@ -243,6 +301,11 @@
 			children = (
 				9037221F170CCC9500B51035 /* CurrenciesList.plist */,
 				9037221C170CCADD00B51035 /* USD.plist */,
+				902390FD170DFE6F00F85032 /* PLN.plist */,
+				90239101170E03A100F85032 /* ARS.plist */,
+				90239102170E03A100F85032 /* EGP.plist */,
+				90239103170E03A100F85032 /* EUR.plist */,
+				90239104170E03A100F85032 /* GBP.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -278,6 +341,14 @@
 		908AF1821708387A00087625 /* Flags */ = {
 			isa = PBXGroup;
 			children = (
+				90239129170E108000F85032 /* argentine-flag.png */,
+				9023912A170E108000F85032 /* argentine-flag@2x.png */,
+				9023912B170E108000F85032 /* egypt-flag.png */,
+				9023912C170E108000F85032 /* egypt-flag@2x.png */,
+				9023912D170E108000F85032 /* eu-flag.png */,
+				9023912E170E108000F85032 /* eu-flag@2x.png */,
+				9023912F170E108000F85032 /* uk-flag.png */,
+				90239130170E108000F85032 /* uk-flag@2x.png */,
 				902390F9170DF3B600F85032 /* poland-flag.png */,
 				902390FA170DF3B600F85032 /* poland-flag@2x.png */,
 				908AF17D1708386E00087625 /* usa-flag.png */,
@@ -320,6 +391,22 @@
 		90AEA5F7170B6F2300DC008D /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				90239121170E0ABC00F85032 /* 1penny.png */,
+				90239122170E0ABC00F85032 /* 1penny@2x.png */,
+				90239123170E0ABC00F85032 /* gbp5.png */,
+				90239124170E0ABC00F85032 /* gbp5@2x.png */,
+				90239119170E09FF00F85032 /* euro1.png */,
+				9023911A170E09FF00F85032 /* euro1@2x.png */,
+				9023911B170E09FF00F85032 /* euro500.png */,
+				9023911C170E09FF00F85032 /* euro500@2x.png */,
+				90239111170E096100F85032 /* egp1.png */,
+				90239112170E096100F85032 /* egp1@2x.png */,
+				90239113170E096100F85032 /* egp2.png */,
+				90239114170E096100F85032 /* egp2@2x.png */,
+				90239109170E089800F85032 /* argentine-peso.png */,
+				9023910A170E089800F85032 /* argentine-peso@2x.png */,
+				9023910B170E089800F85032 /* ARS-1-peso-argentino.png */,
+				9023910C170E089800F85032 /* ARS-1-peso-argentino@2x.png */,
 				902390F1170DF33700F85032 /* zloty.png */,
 				902390F2170DF33700F85032 /* zloty@2x.png */,
 				902390F3170DF33700F85032 /* zloty100.png */,
@@ -416,6 +503,35 @@
 				902390F8170DF33700F85032 /* zloty100@2x.png in Resources */,
 				902390FB170DF3B600F85032 /* poland-flag.png in Resources */,
 				902390FC170DF3B600F85032 /* poland-flag@2x.png in Resources */,
+				902390FE170DFE6F00F85032 /* PLN.plist in Resources */,
+				90239105170E03A100F85032 /* ARS.plist in Resources */,
+				90239106170E03A100F85032 /* EGP.plist in Resources */,
+				90239107170E03A100F85032 /* EUR.plist in Resources */,
+				90239108170E03A100F85032 /* GBP.plist in Resources */,
+				9023910D170E089800F85032 /* argentine-peso.png in Resources */,
+				9023910E170E089800F85032 /* argentine-peso@2x.png in Resources */,
+				9023910F170E089800F85032 /* ARS-1-peso-argentino.png in Resources */,
+				90239110170E089800F85032 /* ARS-1-peso-argentino@2x.png in Resources */,
+				90239115170E096100F85032 /* egp1.png in Resources */,
+				90239116170E096100F85032 /* egp1@2x.png in Resources */,
+				90239117170E096100F85032 /* egp2.png in Resources */,
+				90239118170E096100F85032 /* egp2@2x.png in Resources */,
+				9023911D170E09FF00F85032 /* euro1.png in Resources */,
+				9023911E170E09FF00F85032 /* euro1@2x.png in Resources */,
+				9023911F170E09FF00F85032 /* euro500.png in Resources */,
+				90239120170E09FF00F85032 /* euro500@2x.png in Resources */,
+				90239125170E0ABC00F85032 /* 1penny.png in Resources */,
+				90239126170E0ABC00F85032 /* 1penny@2x.png in Resources */,
+				90239127170E0ABC00F85032 /* gbp5.png in Resources */,
+				90239128170E0ABC00F85032 /* gbp5@2x.png in Resources */,
+				90239131170E108000F85032 /* argentine-flag.png in Resources */,
+				90239132170E108000F85032 /* argentine-flag@2x.png in Resources */,
+				90239133170E108000F85032 /* egypt-flag.png in Resources */,
+				90239134170E108000F85032 /* egypt-flag@2x.png in Resources */,
+				90239135170E108000F85032 /* eu-flag.png in Resources */,
+				90239136170E108000F85032 /* eu-flag@2x.png in Resources */,
+				90239137170E108000F85032 /* uk-flag.png in Resources */,
+				90239138170E108000F85032 /* uk-flag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Pound sterling</string>
+	<key>ISOCurrencyCode</key>
+	<string>GBP</string>
+	<key>flagImageName</key>
+	<string>uk-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>1penny</string>
+		<string>gbp5</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The pound sterling (symbol: £; ISO code: GBP), commonly known simply as the pound, is the official currency of the United Kingdom, the British Crown dependencies of Jersey, Guernsey and the Isle of Man, and the British Overseas Territories of South Georgia and the South Sandwich Islands, the British Antarctic Territory and Saint Helena, Ascension and Tristan da Cunha (in Tristan da Cunha only). It is subdivided into 100 pence (singular: penny). A number of nations that do not use sterling also have currencies called the &quot;pound&quot;.
+The British Crown dependencies of Guernsey and Jersey produce their own local issues of sterling: &apos;Guernsey pound&apos; and &apos;Jersey pound&apos;. The pound sterling is also used in the Isle of Man (alongside the Manx pound), Gibraltar (alongside the Gibraltar pound), the Falkland Islands (alongside the Falkland Islands pound), and Saint Helena and Ascension Island in Saint Helena, Ascension and Tristan da Cunha (alongside the Saint Helena pound). Manx, Gibraltar, Falkland Islands and Saint Helena pounds are separate currencies, pegged at parity to the pound sterling. Within the UK, some banks operating in Scotland and Northern Ireland produce private sterling denominated banknotes.
+Sterling is the fourth most traded currency in the foreign exchange market, after the American dollar, the euro, and the Japanese yen. Together with those three currencies it forms the basket of currencies which calculate the value of IMF special drawing rights, with an 11.3% weighting as of 2011 (USD 41.9%, Euro 37.4%, Yen 9.4%). Sterling is also the third most held reserve currency in global reserves (about 4%).</string>
+</dict>
+</plist>

@@ -6,6 +6,10 @@
 	<array>
 		<string>PLN</string>
 		<string>USD</string>
+		<string>EUR</string>
+		<string>ARS</string>
+		<string>EGP</string>
+		<string>GBP</string>
 	</array>
 </dict>
 </plist>

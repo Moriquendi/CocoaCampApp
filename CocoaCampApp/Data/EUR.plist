@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Euro</string>
+	<key>ISOCurrencyCode</key>
+	<string>EUR</string>
+	<key>flagImageName</key>
+	<string>eu-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>euro1</string>
+		<string>euro500</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The euro (sign: €; code: EUR) is the currency used by the Institutions of the European Union and is the official currency of the eurozone, which consists of 17 of the 27 member states of the European Union: Austria, Belgium, Cyprus, Estonia, Finland, France, Germany, Greece, Ireland, Italy, Luxembourg, Malta, the Netherlands, Portugal, Slovakia, Slovenia, and Spain. The currency is also used in a further five European countries and consequently used daily by some 332 million Europeans. Additionally, more than 175 million people worldwide—including 150 million people in Africa—use currencies pegged to the euro.
+The euro is the second largest reserve currency as well as the second most traded currency in the world after the United States dollar. As of September 2012, with more than €915 billion in circulation, the euro has the highest combined value of banknotes and coins in circulation in the world, having surpassed the US dollar.[note 14] Based on International Monetary Fund estimates of 2008 GDP and purchasing power parity among the various currencies, the eurozone is the second largest economy in the world.</string>
+</dict>
+</plist>
