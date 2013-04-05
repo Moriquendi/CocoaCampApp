@@ -139,7 +139,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         NSUInteger currencyIndex = [self.selectedCurrenciesIndexes[indexPath.row] intValue];
         MSDataCurrency *currencyData = [self.currencies objectAtIndex:currencyIndex];
         NSNumber *amount = @([self.amountTextField.text intValue] * currencyData.toDollarRatio);
-        NSLog(@"%@", amount);
+
         currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
                                                                numberStyle:NSNumberFormatterCurrencyStyle];
         currencyCell.currencySymbol = currencyData.ISOCurrencyCode;

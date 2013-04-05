@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Canadian Dollar</string>
+	<key>ISOCurrencyCode</key>
+	<string>CAD</string>
+	<key>flagImageName</key>
+	<string>canada-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>canada1</string>
+		<string>canada5</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The Canadian dollar (sign: $; code: CAD) is the currency of Canada. As of 2012, the Canadian dollar is the 6th most traded currency in the world. It is abbreviated with the dollar sign $, or C$ to distinguish it from other dollar-denominated currencies. It is divided into 100 cents
+In 1858, bronze 1¢ and 0.925 silver 5¢, 10¢ and 20¢ coins were issued by the Province of Canada. Except for 1¢ coins struck in 1859, no more coins were issued until 1870, when production of the 5¢ and 10¢ was resumed and silver 25¢ and 50¢ were introduced. Between 1908 and 1919, sovereigns (legal tender in Canada for $4.86 2⁄3) were struck in Ottawa with a &quot;C&quot; mintmark. Gold $5 and $10 coins were issued between 1912 and 1914.</string>
+</dict>
+</plist>

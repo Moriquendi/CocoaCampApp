@@ -4,11 +4,11 @@
 <dict>
 	<key>availableCurrenciesData</key>
 	<array>
-		<string>PLN</string>
+		<string>CAD</string>
 		<string>USD</string>
 		<string>EUR</string>
-		<string>ARS</string>
-		<string>EGP</string>
+		<string>SEK</string>
+		<string>JPY</string>
 		<string>GBP</string>
 	</array>
 </dict>

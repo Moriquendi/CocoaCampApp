@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Swedish Krona</string>
+	<key>ISOCurrencyCode</key>
+	<string>SEK</string>
+	<key>flagImageName</key>
+	<string>sweden-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>krona1</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The krona (plural: kronor; sign: kr or simply :- ; code: SEK) has been the currency of Sweden since 1873. Both the ISO code &quot;SEK&quot; and currency sign &quot;kr&quot; are in common use; the former precedes or follows the value, the latter usually follows it, but especially in the past, it sometimes preceded the value. In English, the currency is sometimes referred to as the Swedish crown, since krona literally means crown in Swedish. The Swedish krona was the 9th most traded currency in the world by value in April 2010.
+One krona is subdivided into 100 öre (singular and plural; when referring to the currency unit itself, however, the plural is ören). However, all öre coins have been discontinued as of 30 September 2010. Goods can still be priced in öre, but all sums are rounded to the nearest krona when paying with cash.</string>
+</dict>
+</plist>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fullName</key>
+	<string>Japanese Yen</string>
+	<key>ISOCurrencyCode</key>
+	<string>JPY</string>
+	<key>flagImageName</key>
+	<string>japan-flag</string>
+	<key>moneyImagesNames</key>
+	<array>
+		<string>yen1</string>
+		<string>yen2</string>
+	</array>
+	<key>toDollarRatio</key>
+	<integer>0</integer>
+	<key>description</key>
+	<string>The Japanese yen (円 or 圓 en?, sign: ¥; code: JPY) is the official currency of Japan. It is the third most traded currency in the foreign exchange market after the United States dollar and the euro.[1] It is also widely used as a reserve currency after the U.S. dollar, the euro and the pound sterling.
+
+The yen declined during the Japanese asset price bubble and continued to do so afterwards, reaching a low of ¥134 to US$1 in February 2002. The Bank of Japan&apos;s policy of zero interest rates has discouraged yen investments, with the carry trade of investors borrowing yen and investing in better-paying currencies (thus further pushing down the yen) estimated to be as large as $1 trillion. In February 2007 The Economist estimated that the yen was 15% undervalued against the dollar, and as much as 40% undervalued against the euro.</string>
+</dict>
+</plist>
