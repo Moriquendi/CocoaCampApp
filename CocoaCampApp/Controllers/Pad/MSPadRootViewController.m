@@ -8,10 +8,10 @@
 
 #import "MSPadRootViewController.h"
 #import "MSCurrencySummaryViewController.h"
+#import "MSRootViewController_Private.h"
 
 @interface MSPadRootViewController ()
 @property (nonatomic, weak) IBOutlet UIView *currencySummaryView;
-@property (nonatomic, strong) UIPopoverController *pickerPopover;
 @property (nonatomic, strong) UIViewController *summaryVC;
 @end
 
@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super initWithNibName:@"MSPadRootViewController" bundle:nil]) {
-        // Nothing here
+        [self _setup];
     }
     return self;
 }
@@ -33,25 +33,6 @@
 {
     [super viewDidLoad];
     self.currencySummaryView.backgroundColor = [UIColor clearColor];
-}
-
-
-#pragma mark - MSRootViewController
-
-- (IBAction)showCurrenciesPicker:(id)sender
-{
-    MSCurrencyPickerViewController *currencyPickerVC = [[MSCurrencyPickerViewController alloc] initWithCurrencies:self.currencies];
-    currencyPickerVC.delegate = self;
-    currencyPickerVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    
-    self.pickerPopover = [[UIPopoverController alloc] initWithContentViewController:currencyPickerVC];
-    [self.pickerPopover presentPopoverFromRect:((UIView *)sender).frame
-                                        inView:[sender superview]
-                      permittedArrowDirections:UIPopoverArrowDirectionUp// UIPopoverArrowDirectionAny
-                                      animated:YES];
-
-    [self.pickerPopover setPopoverContentSize:self.pickerPopover.contentViewController.contentSizeForViewInPopover
-                                     animated:YES];
 }
 
 #pragma mark - UITableViewDelegate

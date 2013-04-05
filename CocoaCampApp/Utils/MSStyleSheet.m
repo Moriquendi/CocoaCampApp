@@ -16,6 +16,8 @@
 @property (nonatomic, readwrite, strong) UIColor *emphasizedTextColor;
 @property (nonatomic, readwrite, strong) UIColor *darkTextColor;
 @property (nonatomic, readwrite, strong) UIColor *lightTextColor;
+@property (nonatomic, readwrite, strong) UIColor *collectionViewCellsUnselectedBgColor;
+@property (nonatomic, readwrite, strong) UIColor *collectionViewCellsSelectedBgColor;
 @end
 
 @implementation MSStyleSheet
@@ -50,6 +52,15 @@
                                                    green:71.f/255.f
                                                     blue:66.f/255.f
                                                    alpha:1.0];
+        
+        self.collectionViewCellsSelectedBgColor = [UIColor colorWithRed:241.f/255.f
+                                                                  green:71.f/255.f
+                                                                   blue:66.f/255.f
+                                                                  alpha:1.0];
+        self.collectionViewCellsUnselectedBgColor = [UIColor colorWithRed:152.f/255.f
+                                                                    green:210.f/255.f
+                                                                     blue:240.f/255.f
+                                                                    alpha:1.0];
 
         [self _applyAppearanceProxies];
     }

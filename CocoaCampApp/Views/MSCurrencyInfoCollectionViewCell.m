@@ -19,6 +19,20 @@
 
 @implementation MSCurrencyInfoCollectionViewCell
 
+#pragma mark - Setters
+
+- (void)setCurrencySymbol:(NSString *)currencySymbol
+{
+    _currencySymbol = currencySymbol;
+    self.currencySymbolLabel.text = _currencySymbol;
+}
+
+- (void)setCurrencyFullName:(NSString *)currencyFullName
+{
+    _currencyFullName = currencyFullName;
+    self.currencyNameLabel.text = currencyFullName;
+}
+
 #pragma mark - UIView
 
 - (id)initWithFrame:(CGRect)frame
@@ -29,6 +43,7 @@
                                                           options:nil][0];
         [self.contentView addSubview:contentView];
         [self setEnabled:YES];
+        [self _updateCellsColors];
     }
     return self;
 }
@@ -44,19 +59,26 @@
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
+    [self _updateCellsColors];
+}
 
+#pragma mark - MSCurrencyInfoCollectionViewCell ()
+
+- (void)_updateCellsColors
+{
     MSStyleSheet *styleSheet = [MSStyleSheet sharedInstance];
-
-    if (selected) {
-        self.backgroundView.backgroundColor = [UIColor colorWithRed:241.f/255.f green:71.f/255.f blue:66.f/255.f alpha:1.0];
+    
+    if (self.selected) {
+        self.backgroundView.backgroundColor = styleSheet.collectionViewCellsSelectedBgColor;
         self.currencySymbolLabel.textColor = styleSheet.lightTextColor;
         self.currencyNameLabel.textColor = styleSheet.lightTextColor;
     }
     else {
-        self.backgroundView.backgroundColor = [UIColor colorWithRed:152.f/255.f green:210.f/255.f blue:240.f/255.f alpha:1.0];
+        self.backgroundView.backgroundColor = styleSheet.collectionViewCellsUnselectedBgColor;
         self.currencySymbolLabel.textColor = styleSheet.darkTextColor;
         self.currencyNameLabel.textColor = styleSheet.darkTextColor;
     }
 }
+
 
 @end

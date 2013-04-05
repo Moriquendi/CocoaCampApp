@@ -15,6 +15,8 @@
 @property (nonatomic, readonly, strong) UIColor *emphasizedTextColor;
 @property (nonatomic, readonly, strong) UIColor *darkTextColor;
 @property (nonatomic, readonly, strong) UIColor *lightTextColor;
+@property (nonatomic, readonly, strong) UIColor *collectionViewCellsUnselectedBgColor;
+@property (nonatomic, readonly, strong) UIColor *collectionViewCellsSelectedBgColor;
 
 + (instancetype)sharedInstance;
 

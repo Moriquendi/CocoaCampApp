@@ -90,7 +90,11 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     MSCurrencyInfoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCurrencyInfoCellIdentifier
                                                                                        forIndexPath:indexPath];
     
-    [cell setEnabled:![((MSDataCurrency *)self.currencies[indexPath.item]) isDownloadingRates]];
+    MSDataCurrency *currencyData = self.currencies[indexPath.item];
+
+    [cell setCurrencyFullName:currencyData.fullName];
+    [cell setCurrencySymbol:currencyData.currencySymbol];
+    [cell setEnabled:![currencyData isDownloadingRates]];
 
     // Configure appearance
     cell.layer.cornerRadius = 5.0;

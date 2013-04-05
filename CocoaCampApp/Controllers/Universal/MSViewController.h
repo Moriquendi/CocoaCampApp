@@ -10,4 +10,6 @@
 
 @interface MSViewController : UIViewController
 
+- (void)presentAccessoryViewController:(UIViewController *)controller sender:(id)sender;
+
 @end

@@ -11,5 +11,7 @@
 @interface MSCurrencyInfoCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, getter = isEnabled) BOOL enabled;
+@property (nonatomic, strong) NSString *currencySymbol;
+@property (nonatomic, strong) NSString *currencyFullName;
 
 @end

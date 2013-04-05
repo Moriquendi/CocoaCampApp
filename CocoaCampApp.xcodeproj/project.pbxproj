@@ -124,6 +124,7 @@
 		9030414B17075391003F33AE /* MSCurrencyInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCurrencyInfoCollectionViewCell.h; path = Views/MSCurrencyInfoCollectionViewCell.h; sourceTree = "<group>"; };
 		9030414C17075391003F33AE /* MSCurrencyInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCurrencyInfoCollectionViewCell.m; path = Views/MSCurrencyInfoCollectionViewCell.m; sourceTree = "<group>"; };
 		9030414E1707593F003F33AE /* MSCurrencyInfoCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSCurrencyInfoCollectionView.xib; path = Views/MSCurrencyInfoCollectionView.xib; sourceTree = "<group>"; };
+		9035E3FC170F44D000CF9D17 /* MSRootViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSRootViewController_Private.h; path = Controllers/Universal/MSRootViewController_Private.h; sourceTree = "<group>"; };
 		90372219170CC81700B51035 /* MSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSClient.h; path = Utils/MSClient.h; sourceTree = "<group>"; };
 		9037221A170CC81700B51035 /* MSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSClient.m; path = Utils/MSClient.m; sourceTree = "<group>"; };
 		9037221C170CCADD00B51035 /* USD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = USD.plist; path = Data/USD.plist; sourceTree = "<group>"; };
@@ -312,6 +313,7 @@
 				9019C7171707394A00AA2B41 /* MSRootViewController.h */,
 				9019C7181707394A00AA2B41 /* MSRootViewController.m */,
 				9019C71A1707394A00AA2B41 /* MSRootViewController.xib */,
+				9035E3FC170F44D000CF9D17 /* MSRootViewController_Private.h */,
 				908AF1AE1709F0C400087625 /* MSCurrencyPickerViewController.h */,
 				908AF1AF1709F0C400087625 /* MSCurrencyPickerViewController.m */,
 				90ECC40F170B597900EF7633 /* MSCurrencyPickerViewController.xib */,

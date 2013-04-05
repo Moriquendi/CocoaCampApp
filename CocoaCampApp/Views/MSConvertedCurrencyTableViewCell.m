@@ -48,8 +48,9 @@
         UIView *contentView = [[NSBundle mainBundle] loadNibNamed:@"MSConvertedCurrencyView"
                                                             owner:self
                                                           options:nil][0];
+        contentView.frame = self.contentView.bounds;
+        contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.contentView addSubview:contentView];
-
         // Accessory
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 

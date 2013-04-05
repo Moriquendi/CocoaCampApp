@@ -46,19 +46,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 - (id)init
 {
     if (self = [super initWithNibName:@"MSRootViewController" bundle:nil]) {
-        // Set default source currency
-        self.sourceCurrencyIndex = 0;
-        
-        // Selected currencies indexes
-        self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
-
-        // Load data
-        self.currencies = [[MSClient sharedInstance] currenciesData];
-
-        // Setting up Currency formatter
-        self.currencyFormatter = [[NSNumberFormatter alloc] init];
-        [self.currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [self.currencyFormatter setLocale:[NSLocale currentLocale]];
+        [self _setup];
     }
     return self;
 }
@@ -123,7 +111,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
             break;
     }
     currencyPickerVC.tag = [sender tag];
-    [self.navigationController pushViewController:currencyPickerVC animated:YES];
+    [self presentAccessoryViewController:currencyPickerVC sender:sender];
 }
 - (IBAction)textDidChange:(id)sender
 {
@@ -132,6 +120,23 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 }
 
 #pragma mark - MSRootViewController ()
+
+- (void)_setup
+{
+    // Set default source currency
+    self.sourceCurrencyIndex = 0;
+    
+    // Selected currencies indexes
+    self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
+    
+    // Load data
+    self.currencies = [[MSClient sharedInstance] currenciesData];
+    
+    // Setting up Currency formatter
+    self.currencyFormatter = [[NSNumberFormatter alloc] init];
+    [self.currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [self.currencyFormatter setLocale:[NSLocale currentLocale]];
+}
 
 - (void)_updateDestinationLabel
 {
@@ -164,8 +169,9 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     if ([cell isKindOfClass:[MSConvertedCurrencyTableViewCell class]]) {
         MSConvertedCurrencyTableViewCell *currencyCell = (MSConvertedCurrencyTableViewCell *)cell;
         NSUInteger currencyIndex = [self.selectedCurrenciesIndexes[indexPath.row] intValue];
-        MSDataCurrency *currencyData = [self.currencies objectAtIndex:currencyIndex];
-        NSNumber *amount = @([self.amountTextField.text intValue] * currencyData.toDollarRatio);
+        MSDataCurrency *currencyData = self.currencies[currencyIndex];
+        MSDataCurrency *currencyFromData = self.currencies[self.sourceCurrencyIndex];
+        NSNumber *amount = @([self.amountTextField.text intValue] * currencyFromData.toDollarRatio / currencyData.toDollarRatio);
 
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setCurrencySymbol:currencyData.currencySymbol];
@@ -199,14 +205,15 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         case DESTINATION_CURRENCY_TAG:
             if (![self.selectedCurrenciesIndexes containsObject:@(indexPath.item)]) {
                 [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
-                [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                                 withRowAnimation:UITableViewRowAnimationAutomatic];
                 [self _updateDestinationLabel];
             }
             break;
         default:
             break;
     }
+
+    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                     withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -216,13 +223,14 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
             break;
         case DESTINATION_CURRENCY_TAG:
             [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
-            [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                             withRowAnimation:UITableViewRowAnimationAutomatic];
             [self _updateDestinationLabel];
             break;
         default:
             break;
     }
+
+    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                     withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 @end
