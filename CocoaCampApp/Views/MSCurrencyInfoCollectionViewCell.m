@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
+@property (weak, nonatomic) IBOutlet UIView *activityView;
 
 @end
 
@@ -27,11 +28,18 @@
                                                             owner:self
                                                           options:nil][0];
         [self.contentView addSubview:contentView];
+        [self setEnabled:YES];
     }
     return self;
 }
 
 #pragma mark - UICollectionViewCell
+
+- (void)setEnabled:(BOOL)enabled
+{
+    _enabled = enabled;
+    self.activityView.hidden = enabled;
+}
 
 - (void)setSelected:(BOOL)selected
 {

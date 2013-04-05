@@ -40,6 +40,7 @@
         path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
         NSDictionary *content = [[NSDictionary alloc] initWithContentsOfFile:path];
         MSDataCurrency *currencyData = [[MSDataCurrency alloc] initWithContent:content];
+        [self _downloadCurrencyRates:currencyData];
         [currenciesData addObject:currencyData];
     }
 
@@ -48,28 +49,23 @@
 
 #pragma mark - MSClient ()
 
-- (CGFloat)_convertCurrency:(NSString *)fromCurrencyName toCurrency:(NSString *)toCurrencyName
+- (void)_downloadCurrencyRates:(MSDataCurrency *)currency
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://currency-api.appspot.com/api/%@/%@.json?key=%@", fromCurrencyName, toCurrencyName, API_KEY]];
+    if ([currency.ISOCurrencyCode isEqualToString:@"USD"]) {
+        currency.toDollarRatio = 1.0;
+    }
+    else {
+        currency.isDownloadingRates = YES;
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://currency-api.appspot.com/api/%@/%@.json?key=%@", currency.ISOCurrencyCode, @"USD", API_KEY]];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData* data = [NSData dataWithContentsOfURL:url];
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL:url];
-
-        [self performSelectorOnMainThread:@selector(_parseData:)
-                               withObject:data
-                            waitUntilDone:YES];
-    });
-
-    return  0;
-}
-
-- (void)_parseData:(NSData *)responseData {
-    NSError* error;
-    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData
-                                                         options:kNilOptions
-                                                           error:&error];
-
-    NSLog(@"%@", json);
+            [currency performSelectorOnMainThread:@selector(updateWithData:)
+                                       withObject:data
+                                    waitUntilDone:YES];
+        });
+    }
 }
 
 @end

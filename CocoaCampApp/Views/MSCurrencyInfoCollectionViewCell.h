@@ -10,4 +10,6 @@
 
 @interface MSCurrencyInfoCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, getter = isEnabled) BOOL enabled;
+
 @end

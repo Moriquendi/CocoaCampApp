@@ -15,7 +15,6 @@
 @property (nonatomic, readwrite, strong) NSString *flagImageName;
 @property (nonatomic, readwrite, strong) NSArray *moneyImagesNames;
 @property (nonatomic, readwrite, strong) NSString *currencyDescription;
-@property (nonatomic, readwrite) CGFloat toDollarRatio;
 
 @end
 
@@ -32,6 +31,22 @@
         self.toDollarRatio = [content[@"toDollarRatio"] floatValue];
     }
     return self;
+}
+
+- (void)updateWithData:(NSData *)data
+{
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    if ([json[@"success"] boolValue]) {
+        self.toDollarRatio = [json[@"rate"] floatValue];;
+    }
+    else {
+        self.toDollarRatio = 0.f;
+    }
+    
+    self.isDownloadingRates = NO;
 }
 
 @end

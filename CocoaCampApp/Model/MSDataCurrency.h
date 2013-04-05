@@ -15,8 +15,10 @@
 @property (nonatomic, readonly, strong) NSString *flagImageName;
 @property (nonatomic, readonly, strong) NSArray *moneyImagesNames;
 @property (nonatomic, readonly, strong) NSString *currencyDescription;
-@property (nonatomic, readonly) CGFloat toDollarRatio;
+@property (nonatomic) BOOL isDownloadingRates;
+@property (nonatomic) CGFloat toDollarRatio;
 
 - (id)initWithContent:(NSDictionary *)content;
+- (void)updateWithData:(NSData *)data;
 
 @end

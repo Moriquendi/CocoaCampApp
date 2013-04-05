@@ -9,6 +9,7 @@
 #import "MSCurrencyPickerViewController.h"
 #import "MSStyleSheet.h"
 #import "MSCurrencyInfoCollectionViewCell.h"
+#import "MSDataCurrency.h"
 #import <QuartzCore/QuartzCore.h>
 
 NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
@@ -41,10 +42,11 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     [self.collectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
                       forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
     self.collectionView.allowsMultipleSelection = self.isMultipleSelectionEnabled;
-    
+
     for (NSNumber *index in self.selectedItemIndexes) {
-        [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForItem:[index intValue] inSection:0]
-                                            animated:NO];
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:[index intValue] inSection:0]
+                                          animated:NO
+                                    scrollPosition:UICollectionViewScrollPositionNone];
     }
 }
 
@@ -63,11 +65,16 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 - (void)selectItemAtIndex:(NSUInteger)index
 {
+    [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
+                                      animated:NO
+                                scrollPosition:UICollectionViewScrollPositionNone];
     [self.selectedItemIndexes addObject:@(index)];
 }
 
 - (void)deselectItemAtIndex:(NSUInteger)index
 {
+    [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
+                                        animated:NO];
     [self.selectedItemIndexes removeObject:@(index)];
 }
 
@@ -80,9 +87,11 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCurrencyInfoCellIdentifier
-                                                                           forIndexPath:indexPath];
+    MSCurrencyInfoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCurrencyInfoCellIdentifier
+                                                                                       forIndexPath:indexPath];
     
+    [cell setEnabled:![((MSDataCurrency *)self.currencies[indexPath.item]) isDownloadingRates]];
+
     // Configure appearance
     cell.layer.cornerRadius = 5.0;
     cell.layer.masksToBounds = YES;
