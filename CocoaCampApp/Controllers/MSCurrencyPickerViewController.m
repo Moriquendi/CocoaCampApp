@@ -21,10 +21,21 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 @implementation MSCurrencyPickerViewController
 
+#pragma mark - Setters
+
 - (void)setEnableMultipleSelection:(BOOL)enableMultipleSelection
 {
     _enableMultipleSelection = enableMultipleSelection;
     self.collectionView.allowsMultipleSelection = enableMultipleSelection;
+}
+
+#pragma mark - NSObject
+
+- (void)dealloc
+{
+    [self.currencies removeObserver:self
+               fromObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.currencies count])]
+                         forKeyPath:@"isDownloadingRates"];
 }
 
 #pragma mark - UIViewController
@@ -59,6 +70,13 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
         self.enableMultipleSelection = NO;
         self.selectedItemIndexes = [[NSMutableArray alloc] init];
         self.tag = 0;
+        
+        // Observer
+        [self.currencies addObserver:self
+                  toObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.currencies count])]
+                          forKeyPath:@"isDownloadingRates"
+                             options:NSKeyValueObservingOptionNew
+                             context:nil];
     }
     return self;
 }
@@ -76,6 +94,16 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
                                         animated:NO];
     [self.selectedItemIndexes removeObject:@(index)];
+}
+
+#pragma mark - Observers
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"isDownloadingRates"]) {
+        [self.collectionView reloadItemsAtIndexPaths:@[
+         [NSIndexPath indexPathForItem:[self.currencies indexOfObject:object] inSection:0]]];
+    };
 }
 
 #pragma mark - <UICollectionViewDataSource>
@@ -108,6 +136,11 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 }
 
 #pragma mark - <UICollectionViewDelegate>
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return ![self.currencies[indexPath.item] isDownloadingRates];
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

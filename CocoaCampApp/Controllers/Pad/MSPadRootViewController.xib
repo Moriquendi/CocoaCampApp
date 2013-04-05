@@ -126,6 +126,7 @@
 								<string key="NSFrame">{{60, 354}, {329, 44}}</string>
 								<reference key="NSSuperview" ref="748441046"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -326,6 +327,15 @@
 						<int key="IBEventType">18</int>
 					</object>
 					<int key="connectionID">342</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">textFieldFinishedEditing:</string>
+						<reference key="source" ref="907178971"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">20</int>
+					</object>
+					<int key="connectionID">347</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1162,7 +1172,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">344</int>
+			<int key="maxID">347</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1189,10 +1199,15 @@
 					<string key="className">MSRootViewController</string>
 					<string key="superclassName">MSViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="end:">id</string>
 						<string key="showCurrenciesPicker:">id</string>
 						<string key="textDidChange:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="end:">
+							<string key="name">end:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showCurrenciesPicker:">
 							<string key="name">showCurrenciesPicker:</string>
 							<string key="candidateClassName">id</string>

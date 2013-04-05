@@ -377,7 +377,7 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="590242828"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="948902606">
+							<object class="IBNSLayoutConstraint" id="845826094">
 								<reference key="firstItem" ref="590242828"/>
 								<int key="firstAttribute">8</int>
 								<int key="relation">0</int>
@@ -400,7 +400,7 @@
 						<int key="objectID">35</int>
 						<reference key="object" ref="467499627"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="30979285">
+							<object class="IBNSLayoutConstraint" id="1050744360">
 								<reference key="firstItem" ref="467499627"/>
 								<int key="firstAttribute">8</int>
 								<int key="relation">0</int>
@@ -526,12 +526,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">128</int>
-						<reference key="object" ref="948902606"/>
+						<reference key="object" ref="845826094"/>
 						<reference key="parent" ref="590242828"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">132</int>
-						<reference key="object" ref="30979285"/>
+						<reference key="object" ref="1050744360"/>
 						<reference key="parent" ref="467499627"/>
 					</object>
 				</array>
@@ -557,12 +557,12 @@
 				<string key="132.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="35.IBViewMetadataConstraints">
-					<reference ref="30979285"/>
+					<reference ref="1050744360"/>
 				</array>
 				<boolean value="NO" key="35.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="4.IBViewMetadataConstraints">
-					<reference ref="948902606"/>
+					<reference ref="845826094"/>
 				</array>
 				<boolean value="NO" key="4.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

@@ -75,6 +75,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     // Setting up table view
     [self.convertedCurrenciesTableView registerClass:[MSConvertedCurrencyTableViewCell class]
                               forCellReuseIdentifier:kConvertedCurrencyCellIdentifier];
+
+    [self _updateDestinationLabel];
 }
 
 #pragma mark - MSRootViewController
@@ -100,12 +102,14 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         case SOURCE_CURRENCY_TAG:
             currencyPickerVC.enableMultipleSelection = NO;
             [currencyPickerVC selectItemAtIndex:self.sourceCurrencyIndex];
+            currencyPickerVC.title = NSLocalizedString(@"From", nil);
             break;
         case DESTINATION_CURRENCY_TAG:
             currencyPickerVC.enableMultipleSelection = YES;
             for (NSNumber *index in self.selectedCurrenciesIndexes) {
                 [currencyPickerVC selectItemAtIndex:[index intValue]];
             }
+            currencyPickerVC.title = NSLocalizedString(@"To", nil);
             break;
         default:
             break;
@@ -115,8 +119,12 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 }
 - (IBAction)textDidChange:(id)sender
 {
-#warning Code this better
     [self.convertedCurrenciesTableView reloadData];
+}
+
+- (IBAction)textFieldFinishedEditing:(id)sender
+{
+    [self.amountTextField resignFirstResponder];
 }
 
 #pragma mark - MSRootViewController ()
@@ -126,11 +134,11 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     // Set default source currency
     self.sourceCurrencyIndex = 0;
     
-    // Selected currencies indexes
-    self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
-    
     // Load data
     self.currencies = [[MSClient sharedInstance] currenciesData];
+    
+    // Selected currencies indexes
+    self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
     
     // Setting up Currency formatter
     self.currencyFormatter = [[NSNumberFormatter alloc] init];
@@ -171,7 +179,10 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         NSUInteger currencyIndex = [self.selectedCurrenciesIndexes[indexPath.row] intValue];
         MSDataCurrency *currencyData = self.currencies[currencyIndex];
         MSDataCurrency *currencyFromData = self.currencies[self.sourceCurrencyIndex];
-        NSNumber *amount = @([self.amountTextField.text intValue] * currencyFromData.toDollarRatio / currencyData.toDollarRatio);
+        NSNumber *amount = @0;
+        if (currencyData.toDollarRatio != 0) {
+            amount = @([self.amountTextField.text intValue] * currencyFromData.toDollarRatio / currencyData.toDollarRatio);
+        }
 
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setCurrencySymbol:currencyData.currencySymbol];
@@ -212,8 +223,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
             break;
     }
 
-    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.convertedCurrenciesTableView reloadData];
 }
 
 - (void)currencyPicker:(MSCurrencyPickerViewController *)picker didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -229,8 +239,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
             break;
     }
 
-    [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                                     withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.convertedCurrenciesTableView reloadData];
 }
 
 @end

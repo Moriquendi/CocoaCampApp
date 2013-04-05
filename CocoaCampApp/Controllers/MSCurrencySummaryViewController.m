@@ -11,10 +11,8 @@
 @interface MSCurrencySummaryViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
-//@property (weak, nonatomic) IBOutlet UIWebView *currencyDetailsWebView;
 @property (weak, nonatomic) IBOutlet UITextView *currencyDetailsTextView;
 @property (weak, nonatomic) IBOutlet UIScrollView *currenciesImagesScrollView;
-@property (weak, nonatomic) IBOutlet UILabel *currencyNameLabel;
 @property (nonatomic, strong) NSMutableArray *currencyImages;
 @property (nonatomic, strong) MSDataCurrency *currencyData;
 @end
@@ -104,12 +102,6 @@
     }
     self.currenciesImagesScrollView.contentSize = CGSizeMake(self.currenciesImagesScrollView.bounds.size.width * pageNumber,
                                                              self.currenciesImagesScrollView.bounds.size.height);
-
-
-    // Wikipedia content
-//    NSURL *wikipediaURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Dollar"];
-//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:wikipediaURL];
-//    [self.currencyDetailsWebView loadRequest:request];
 }
 
 - (void)viewDidLayoutSubviews
@@ -119,7 +111,6 @@
 }
 
 #pragma mark - MSCurrencySummaryViewController
-
 
 - (id)initWithCurrencyData:(MSDataCurrency *)currency
 {
