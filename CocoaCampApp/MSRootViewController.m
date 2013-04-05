@@ -153,7 +153,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSCurrencySummaryViewController *currencySummaryVC = [[MSCurrencySummaryViewController alloc] initWithCurrencyData:self.currencies[indexPath.row]];
+    NSUInteger index = [self.selectedCurrenciesIndexes[indexPath.row] integerValue];
+    MSCurrencySummaryViewController *currencySummaryVC = [[MSCurrencySummaryViewController alloc] initWithCurrencyData:self.currencies[index]];
     [self.navigationController pushViewController:currencySummaryVC animated:YES];
 }
  

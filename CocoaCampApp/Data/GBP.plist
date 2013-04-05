@@ -10,7 +10,6 @@
 	<string>uk-flag</string>
 	<key>moneyImagesNames</key>
 	<array>
-		<string>1penny</string>
 		<string>gbp5</string>
 	</array>
 	<key>toDollarRatio</key>
