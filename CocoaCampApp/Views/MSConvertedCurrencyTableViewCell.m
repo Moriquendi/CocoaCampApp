@@ -21,10 +21,15 @@
 
 #pragma mark - Getters/Setters
 
-- (void)setCurrencySymbolBgColor:(UIColor *)currencySymbolBgColor
+- (void)setFullCurrencyName:(NSString *)fullCurrencyName
 {
-    _currencySymbolBgColor= currencySymbolBgColor;
-    self.currencyNameLabel.textColor = currencySymbolBgColor;
+    _fullCurrencyName = fullCurrencyName;
+    self.currencyNameLabel.text = fullCurrencyName;
+}
+- (void)setCurrencySymbol:(NSString *)currencySymbol
+{
+    _currencySymbol = currencySymbol;
+    self.currencySymbolLabel.text = currencySymbol;
 }
 
 - (void)setAmount:(NSString *)amount

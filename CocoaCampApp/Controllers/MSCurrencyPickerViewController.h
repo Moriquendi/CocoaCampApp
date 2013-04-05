@@ -28,5 +28,7 @@ UICollectionViewDelegate>
 @property (nonatomic) NSUInteger tag;
 
 - (id)initWithCurrencies:(NSArray *)currencies; // designated initializer
+- (void)selectItemAtIndex:(NSUInteger)index;
+- (void)deselectItemAtIndex:(NSUInteger)index;
 
 @end

@@ -56,21 +56,6 @@
     return self;
 }
 
-#pragma mark - MSStyleSheet
-
-- (UIColor *)randomColorAtIndex:(NSUInteger)index
-{
-    CGFloat jump = 100;
-    CGFloat hue = 10.f + (int)(jump * index) % 360;
-    static CGFloat saturation = 73.f;
-    static CGFloat brightness = 95.f;
-    UIColor *randomColor = [UIColor colorWithHue:hue / 360.f
-                                      saturation:saturation / 100.f
-                                      brightness:brightness / 100.f
-                                           alpha:0.7];
-    return randomColor;
-}
-
 #pragma mark - MSStyleSheet ()
 
 - (void)_applyAppearanceProxies

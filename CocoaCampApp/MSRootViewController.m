@@ -38,7 +38,19 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 - (id)init
 {
     if (self = [super initWithNibName:@"MSRootViewController" bundle:nil]) {
-        // Nothing here
+        // Set default source currency
+        self.sourceCurrencyIndex = 0;
+        
+        // Selected currencies indexes
+        self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
+
+        // Load data
+        self.currencies = [[MSClient sharedInstance] currenciesData];
+
+        // Setting up Currency formatter
+        self.currencyFormatter = [[NSNumberFormatter alloc] init];
+        [self.currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [self.currencyFormatter setLocale:[NSLocale currentLocale]];
     }
     return self;
 }
@@ -56,14 +68,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     self.convertedCurrenciesTableView.backgroundColor = styleSheet.mainBackgroundColor;
     self.amountTextField.textColor = styleSheet.darkTextColor;
 
-    // Setting up Currency formatter
-    self.currencyFormatter = [[NSNumberFormatter alloc] init];
-    [self.currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    [self.currencyFormatter setLocale:[NSLocale currentLocale]];
-
     // Setting up amount text field's keyboard
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
-
     UIToolbar *keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, THUMB_SIZE)];
     [keyboardToolbar setBarStyle:UIBarStyleBlackTranslucent];
     keyboardToolbar.items = @[doneButton];
@@ -73,12 +79,6 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     // Setting up table view
     [self.convertedCurrenciesTableView registerClass:[MSConvertedCurrencyTableViewCell class]
                               forCellReuseIdentifier:kConvertedCurrencyCellIdentifier];
-
-    // Selected currencies indexes
-    self.selectedCurrenciesIndexes = [[NSMutableArray alloc] init];
-
-    // Load data
-    self.currencies = [[MSClient sharedInstance] currenciesData];
 }
 
 #pragma mark - MSRootViewController
@@ -103,9 +103,13 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     switch ([sender tag]) {
         case SOURCE_CURRENCY_TAG:
             currencyPickerVC.enableMultipleSelection = NO;
+            [currencyPickerVC selectItemAtIndex:self.sourceCurrencyIndex];
             break;
         case DESTINATION_CURRENCY_TAG:
             currencyPickerVC.enableMultipleSelection = YES;
+            for (NSNumber *index in self.selectedCurrenciesIndexes) {
+                [currencyPickerVC selectItemAtIndex:[index intValue]];
+            }
             break;
         default:
             break;
@@ -135,10 +139,11 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         NSUInteger currencyIndex = [self.selectedCurrenciesIndexes[indexPath.row] intValue];
         MSDataCurrency *currencyData = [self.currencies objectAtIndex:currencyIndex];
         NSNumber *amount = @([self.amountTextField.text intValue] * currencyData.toDollarRatio);
-
+        NSLog(@"%@", amount);
         currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
                                                                numberStyle:NSNumberFormatterCurrencyStyle];
-        currencyCell.currencySymbolBgColor = [[MSStyleSheet sharedInstance] randomColorAtIndex:indexPath.row];
+        currencyCell.currencySymbol = currencyData.ISOCurrencyCode;
+        currencyCell.fullCurrencyName = currencyData.fullName;
     }
 
     return cell;

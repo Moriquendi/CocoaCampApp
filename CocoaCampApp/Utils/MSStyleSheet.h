@@ -18,6 +18,4 @@
 
 + (instancetype)sharedInstance;
 
-- (UIColor *)randomColorAtIndex:(NSUInteger)index;
-
 @end

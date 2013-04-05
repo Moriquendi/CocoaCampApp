@@ -15,6 +15,7 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
 
 @interface MSCurrencyPickerViewController ()
 @property (nonatomic, readwrite, strong) NSArray *currencies;
+@property (nonatomic, strong) NSMutableArray *selectedItemIndexes;
 @end
 
 @implementation MSCurrencyPickerViewController
@@ -33,17 +34,18 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    
-    // TODO: Put in stylesheet
     self.collectionView.backgroundColor = [[MSStyleSheet sharedInstance] mainBackgroundColor];
     self.collectionView.layer.borderColor = [[MSStyleSheet sharedInstance].separatorColor CGColor];
-//    self.collectionView.layer.borderWidth = 2.0;
-//    self.collectionView.layer.cornerRadius = 5.0;
-    
+
     // Setting up collection view
     [self.collectionView registerClass:[MSCurrencyInfoCollectionViewCell class]
                       forCellWithReuseIdentifier:kCurrencyInfoCellIdentifier];
     self.collectionView.allowsMultipleSelection = self.isMultipleSelectionEnabled;
+    
+    for (NSNumber *index in self.selectedItemIndexes) {
+        [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForItem:[index intValue] inSection:0]
+                                            animated:NO];
+    }
 }
 
 #pragma mark - MSCurrencyPickerViewController
@@ -53,9 +55,20 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     if (self = [super initWithNibName:@"MSCurrencyPickerViewController" bundle:nil]) {
         self.currencies = currencies;
         self.enableMultipleSelection = NO;
+        self.selectedItemIndexes = [[NSMutableArray alloc] init];
         self.tag = 0;
     }
     return self;
+}
+
+- (void)selectItemAtIndex:(NSUInteger)index
+{
+    [self.selectedItemIndexes addObject:@(index)];
+}
+
+- (void)deselectItemAtIndex:(NSUInteger)index
+{
+    [self.selectedItemIndexes removeObject:@(index)];
 }
 
 #pragma mark - <UICollectionViewDataSource>
@@ -73,6 +86,10 @@ NSString *const kCurrencyInfoCellIdentifier = @"cinfo";
     // Configure appearance
     cell.layer.cornerRadius = 5.0;
     cell.layer.masksToBounds = YES;
+    
+    if ([self.selectedItemIndexes containsObject:@(indexPath.item)]) {
+        [cell setSelected:YES];
+    }
     
     return cell;
 }

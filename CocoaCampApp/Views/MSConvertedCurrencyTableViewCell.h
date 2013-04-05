@@ -10,7 +10,8 @@
 
 @interface MSConvertedCurrencyTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIColor *currencySymbolBgColor;
+@property (nonatomic, strong) NSString *fullCurrencyName;
+@property (nonatomic, strong) NSString *currencySymbol;
 @property (nonatomic, strong) NSString *amount;
 
 @end
