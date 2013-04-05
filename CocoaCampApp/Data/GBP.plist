@@ -6,6 +6,8 @@
 	<string>Pound sterling</string>
 	<key>ISOCurrencyCode</key>
 	<string>GBP</string>
+	<key>currencySymbol</key>
+	<string>£</string>
 	<key>flagImageName</key>
 	<string>uk-flag</string>
 	<key>moneyImagesNames</key>

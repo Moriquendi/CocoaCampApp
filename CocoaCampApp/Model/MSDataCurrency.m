@@ -12,6 +12,7 @@
 
 @property (nonatomic, readwrite, strong) NSString *fullName;
 @property (nonatomic, readwrite, strong) NSString *ISOCurrencyCode;
+@property (nonatomic, readwrite, strong) NSString *currencySymbol;
 @property (nonatomic, readwrite, strong) NSString *flagImageName;
 @property (nonatomic, readwrite, strong) NSArray *moneyImagesNames;
 @property (nonatomic, readwrite, strong) NSString *currencyDescription;
@@ -25,6 +26,7 @@
     if (self = [super init]) {
         self.fullName = content[@"fullName"];
         self.ISOCurrencyCode = content[@"ISOCurrencyCode"];
+        self.currencySymbol = content[@"currencySymbol"];
         self.flagImageName = content[@"flagImageName"];
         self.moneyImagesNames = content[@"moneyImagesNames"];
         self.currencyDescription = content[@"description"];

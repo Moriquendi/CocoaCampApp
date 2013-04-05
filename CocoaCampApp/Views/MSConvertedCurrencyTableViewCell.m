@@ -26,10 +26,10 @@
     _fullCurrencyName = fullCurrencyName;
     self.currencyNameLabel.text = fullCurrencyName;
 }
-- (void)setCurrencySymbol:(NSString *)currencySymbol
+- (void)setISOCurrencySymbol:(NSString *)ISOCurrencySymbol
 {
-    _currencySymbol = currencySymbol;
-    self.currencySymbolLabel.text = currencySymbol;
+    _ISOCurrencySymbol = ISOCurrencySymbol;
+    self.currencySymbolLabel.text = ISOCurrencySymbol;
 }
 
 - (void)setAmount:(NSString *)amount

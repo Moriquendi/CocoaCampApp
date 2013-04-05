@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly, strong) NSString *fullName;
 @property (nonatomic, readonly, strong) NSString *ISOCurrencyCode;
+@property (nonatomic, readonly, strong) NSString *currencySymbol;
 @property (nonatomic, readonly, strong) NSString *flagImageName;
 @property (nonatomic, readonly, strong) NSArray *moneyImagesNames;
 @property (nonatomic, readonly, strong) NSString *currencyDescription;

@@ -22,6 +22,8 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 
 @interface MSRootViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *sourceCurrencyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *destinationCurrencyLabel;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITableView *convertedCurrenciesTableView;
 @property (nonatomic, readwrite, strong) NSArray *currencies; // of MSDataCurrency
@@ -32,6 +34,12 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
 @end
 
 @implementation MSRootViewController
+
+- (void)setSourceCurrencyIndex:(NSUInteger)sourceCurrencyIndex
+{
+    _sourceCurrencyIndex = sourceCurrencyIndex;
+    self.sourceCurrencyLabel.text = [NSString stringWithFormat:@"From %@", [self.currencies[sourceCurrencyIndex] ISOCurrencyCode]];
+}
 
 #pragma mark - NSObject
 
@@ -123,6 +131,25 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
     [self.convertedCurrenciesTableView reloadData];
 }
 
+#pragma mark - MSRootViewController ()
+
+- (void)_updateDestinationLabel
+{
+    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    for (NSNumber *idx in self.selectedCurrenciesIndexes) {
+        [indexSet addIndex:[idx integerValue]];
+    }
+    NSArray *currencies = [self.currencies objectsAtIndexes:indexSet];
+
+    NSMutableArray *ISOSymbols = [[NSMutableArray alloc] initWithCapacity:[self.currencies count]];
+    for (MSDataCurrency *currency in currencies) {
+        [ISOSymbols addObject:currency.ISOCurrencyCode];
+    }
+
+    NSString *symbolsText = [ISOSymbols componentsJoinedByString:@", "];
+    self.destinationCurrencyLabel.text = [NSString stringWithFormat:@"To %@", symbolsText];
+}
+
 #pragma mark - <UICollectionViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -140,9 +167,12 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
         MSDataCurrency *currencyData = [self.currencies objectAtIndex:currencyIndex];
         NSNumber *amount = @([self.amountTextField.text intValue] * currencyData.toDollarRatio);
 
-        currencyCell.amount = [NSNumberFormatter localizedStringFromNumber:amount
-                                                               numberStyle:NSNumberFormatterCurrencyStyle];
-        currencyCell.currencySymbol = currencyData.ISOCurrencyCode;
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setCurrencySymbol:currencyData.currencySymbol];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        
+        currencyCell.amount = [formatter stringFromNumber:amount];
+        currencyCell.ISOCurrencySymbol = currencyData.ISOCurrencyCode;
         currencyCell.fullCurrencyName = currencyData.fullName;
     }
 
@@ -171,6 +201,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
                 [self.selectedCurrenciesIndexes addObject:@(indexPath.item)];
                 [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self _updateDestinationLabel];
             }
             break;
         default:
@@ -187,6 +218,7 @@ NSString *const kConvertedCurrencyCellIdentifier = @"ccc";
             [self.selectedCurrenciesIndexes removeObject:@(indexPath.item)];
             [self.convertedCurrenciesTableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                                              withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self _updateDestinationLabel];
             break;
         default:
             break;

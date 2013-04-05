@@ -6,6 +6,8 @@
 	<string>Dollar</string>
 	<key>ISOCurrencyCode</key>
 	<string>USD</string>
+	<key>currencySymbol</key>
+	<string>$</string>
 	<key>flagImageName</key>
 	<string>usa-flag</string>
 	<key>moneyImagesNames</key>

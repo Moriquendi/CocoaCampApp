@@ -6,6 +6,8 @@
 	<string>Euro</string>
 	<key>ISOCurrencyCode</key>
 	<string>EUR</string>
+	<key>currencySymbol</key>
+	<string>€</string>
 	<key>flagImageName</key>
 	<string>eu-flag</string>
 	<key>moneyImagesNames</key>

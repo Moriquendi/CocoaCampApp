@@ -11,7 +11,7 @@
 @interface MSConvertedCurrencyTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *fullCurrencyName;
-@property (nonatomic, strong) NSString *currencySymbol;
+@property (nonatomic, strong) NSString *ISOCurrencySymbol;
 @property (nonatomic, strong) NSString *amount;
 
 @end

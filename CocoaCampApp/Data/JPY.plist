@@ -6,6 +6,8 @@
 	<string>Japanese Yen</string>
 	<key>ISOCurrencyCode</key>
 	<string>JPY</string>
+	<key>currencySymbol</key>
+	<string>¥</string>
 	<key>flagImageName</key>
 	<string>japan-flag</string>
 	<key>moneyImagesNames</key>

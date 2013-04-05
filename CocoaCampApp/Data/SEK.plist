@@ -6,6 +6,8 @@
 	<string>Swedish Krona</string>
 	<key>ISOCurrencyCode</key>
 	<string>SEK</string>
+	<key>currencySymbol</key>
+	<string>kr</string>
 	<key>flagImageName</key>
 	<string>sweden-flag</string>
 	<key>moneyImagesNames</key>

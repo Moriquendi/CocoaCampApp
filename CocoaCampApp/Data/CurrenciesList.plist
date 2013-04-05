@@ -4,8 +4,8 @@
 <dict>
 	<key>availableCurrenciesData</key>
 	<array>
-		<string>CAD</string>
 		<string>USD</string>
+		<string>CAD</string>
 		<string>EUR</string>
 		<string>SEK</string>
 		<string>JPY</string>

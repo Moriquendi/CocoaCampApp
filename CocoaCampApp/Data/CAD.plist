@@ -6,6 +6,8 @@
 	<string>Canadian Dollar</string>
 	<key>ISOCurrencyCode</key>
 	<string>CAD</string>
+	<key>currencySymbol</key>
+	<string>$</string>
 	<key>flagImageName</key>
 	<string>canada-flag</string>
 	<key>moneyImagesNames</key>
